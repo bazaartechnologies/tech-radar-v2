@@ -24,6 +24,12 @@
     "description": "Container orchestration platform. Essential for managing containerized applications at scale."
   },
   {
+    "name": "Python",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "Versatile programming language. Great for data science, automation, and web development. Worth exploring for specific use cases."
+  },
+  {
     "name": "Continuous Integration",
     "quadrant": 0,
     "ring": 0,

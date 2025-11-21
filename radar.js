@@ -85,7 +85,8 @@ class TechRadar {
                 return response.json();
             })
             .then(data => {
-                this.data = data;
+                // Add unique IDs to each item for reliable tracking
+                this.data = data.map((item, index) => ({ ...item, _id: index }));
                 this.render();
             })
             .catch(error => {
@@ -249,7 +250,6 @@ class TechRadar {
     }
 
     render() {
-        console.log('Render called'); // Debug log
         this.svg.innerHTML = '';
         this.drawRadar();
         this.drawBlips();
@@ -333,12 +333,15 @@ class TechRadar {
         const filteredData = this.getFilteredData();
         const mainGroup = this.svg.querySelector('.main-group');
 
-        filteredData.forEach((item, index) => {
+        filteredData.forEach((item, filteredIndex) => {
             const position = this.calculatePosition(item);
+
+            // Use the unique _id we assigned when loading data
+            const originalIndex = item._id;
 
             const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
             g.setAttribute('class', 'blip');
-            g.setAttribute('data-id', index);
+            g.setAttribute('data-id', originalIndex);
 
             // Removed pulse effect to prevent jitter - only show on hover
             // Draw blip outer ring (will only be visible on hover)
@@ -372,7 +375,7 @@ class TechRadar {
             text.setAttribute('fill', 'white');
             text.setAttribute('font-size', '11');
             text.setAttribute('font-weight', 'bold');
-            text.textContent = index + 1;
+            text.textContent = originalIndex + 1;
             g.appendChild(text);
 
             g.addEventListener('click', (e) => {
@@ -380,11 +383,11 @@ class TechRadar {
                 this.showTechDetails(item);
             });
             g.addEventListener('mouseenter', (e) => {
-                this.highlightTech(index);
+                this.highlightTech(originalIndex);
                 this.showTooltip(item, e);
             });
             g.addEventListener('mouseleave', () => {
-                this.unhighlightTech(index);
+                this.unhighlightTech(originalIndex);
                 this.hideTooltip();
             });
             g.addEventListener('mousemove', (e) => this.updateTooltipPosition(e));
@@ -484,28 +487,32 @@ class TechRadar {
         document.getElementById('tech-description').textContent = item.description;
     }
 
-    highlightTech(index) {
-        const blips = document.querySelectorAll('.blip');
-        if (blips[index]) {
-            blips[index].classList.add('highlighted');
+    highlightTech(id) {
+        // Find blip by data-id attribute, not by array index
+        const blip = document.querySelector(`.blip[data-id="${id}"]`);
+        if (blip) {
+            blip.classList.add('highlighted');
         }
 
-        const techItems = document.querySelectorAll('.tech-item');
-        if (techItems[index]) {
-            techItems[index].classList.add('highlighted');
-            techItems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // Find tech item by data-original-index attribute, not by array index
+        const techItem = document.querySelector(`.tech-item[data-original-index="${id}"]`);
+        if (techItem) {
+            techItem.classList.add('highlighted');
+            techItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     }
 
-    unhighlightTech(index) {
-        const blips = document.querySelectorAll('.blip');
-        if (blips[index]) {
-            blips[index].classList.remove('highlighted');
+    unhighlightTech(id) {
+        // Find blip by data-id attribute, not by array index
+        const blip = document.querySelector(`.blip[data-id="${id}"]`);
+        if (blip) {
+            blip.classList.remove('highlighted');
         }
 
-        const techItems = document.querySelectorAll('.tech-item');
-        if (techItems[index]) {
-            techItems[index].classList.remove('highlighted');
+        // Find tech item by data-original-index attribute, not by array index
+        const techItem = document.querySelector(`.tech-item[data-original-index="${id}"]`);
+        if (techItem) {
+            techItem.classList.remove('highlighted');
         }
     }
 
@@ -520,12 +527,14 @@ class TechRadar {
 
         // Group by ring
         const groupedByRing = {};
-        filteredData.forEach((item, index) => {
+        filteredData.forEach((item) => {
+            // Use the unique _id we assigned when loading data
+            const originalIndex = item._id;
             const ringName = this.rings[item.ring].name;
             if (!groupedByRing[ringName]) {
                 groupedByRing[ringName] = [];
             }
-            groupedByRing[ringName].push({ ...item, index });
+            groupedByRing[ringName].push({ ...item, originalIndex });
         });
 
         let html = '<h3>Technologies</h3>';
@@ -537,8 +546,8 @@ class TechRadar {
                     <h4>${ring.name}</h4>`;
 
                 items.forEach(item => {
-                    html += `<div class="tech-item" data-index="${item.index}">
-                        <span class="tech-number" style="background: ${ring.color}">${item.index + 1}</span>
+                    html += `<div class="tech-item" data-original-index="${item.originalIndex}">
+                        <span class="tech-number" style="background: ${ring.color}">${item.originalIndex + 1}</span>
                         <span>${item.name}</span>
                     </div>`;
                 });
@@ -550,14 +559,16 @@ class TechRadar {
         listDiv.innerHTML = html;
 
         // Add click handlers
-        document.querySelectorAll('.tech-item').forEach(item => {
-            const index = parseInt(item.dataset.index);
-            item.addEventListener('click', () => {
-                this.showTechDetails(filteredData[index]);
-                this.highlightTech(index);
+        document.querySelectorAll('.tech-item').forEach(itemEl => {
+            const originalIndex = parseInt(itemEl.dataset.originalIndex);
+            const item = this.data[originalIndex];
+
+            itemEl.addEventListener('click', () => {
+                this.showTechDetails(item);
+                this.highlightTech(originalIndex);
             });
-            item.addEventListener('mouseenter', () => this.highlightTech(index));
-            item.addEventListener('mouseleave', () => this.unhighlightTech(index));
+            itemEl.addEventListener('mouseenter', () => this.highlightTech(originalIndex));
+            itemEl.addEventListener('mouseleave', () => this.unhighlightTech(originalIndex));
         });
     }
 }

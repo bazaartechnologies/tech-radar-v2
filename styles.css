@@ -553,7 +553,7 @@ kbd {
     background: rgba(139, 92, 246, 0.05);
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.2s ease-out, border-color 0.2s ease-out;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -561,9 +561,8 @@ kbd {
 }
 
 .tech-item:hover {
-    background: rgba(139, 92, 246, 0.15);
-    transform: translateX(5px);
-    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.4);
 }
 
 .tech-item.highlighted {
