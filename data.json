@@ -1,194 +1,327 @@
 [
   {
-    "name": "React",
+    "name": "Makefile",
+    "quadrant": 1,
+    "ring": 0,
+    "description": "Makefile is a build automation tool that defines a set of tasks to be executed. With a presence in 70.1% of repositories, it demonstrates strong adoption and is recommended for streamlining build processes.",
+    "metadata": {
+      "repos_count": 61,
+      "usage_percentage": 70.1,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Java",
     "quadrant": 3,
-    "ring": 0,
-    "description": "A JavaScript library for building user interfaces. Mature, widely adopted, with excellent ecosystem and tooling."
+    "ring": 1,
+    "description": "Java is a widely-used programming language known for its portability across platforms and strong community support. With its presence in 59.8% of repositories, it shows promise but is still in the Trial ring, making it worth exploring for new projects.",
+    "metadata": {
+      "repos_count": 52,
+      "usage_percentage": 59.8,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "TypeScript",
+    "name": "Shell",
+    "quadrant": 0,
+    "ring": 1,
+    "description": "Shell is a command-line interface used for interacting with the operating system and executing scripts. With a presence in 57.5% of repositories, it shows significant usage and is worth pursuing for automation and scripting tasks.",
+    "metadata": {
+      "repos_count": 50,
+      "usage_percentage": 57.5,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Dockerfile",
+    "quadrant": 1,
+    "ring": 1,
+    "description": "A Dockerfile is a script containing a series of instructions on how to build a Docker image. With 54% usage across repositories, it shows promise for containerization practices, making it worth pursuing.",
+    "metadata": {
+      "repos_count": 47,
+      "usage_percentage": 54.0,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "GitHub Actions",
+    "quadrant": 1,
+    "ring": 1,
+    "description": "GitHub Actions is a CI/CD tool that automates workflows directly within GitHub repositories. With a presence in 49.4% of repositories, it shows promise for adoption, making it worth pursuing for automation needs.",
+    "metadata": {
+      "repos_count": 43,
+      "usage_percentage": 49.4,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Maven",
+    "quadrant": 1,
+    "ring": 1,
+    "description": "Maven is a build automation tool primarily used for Java projects, facilitating project management and dependency management. With a presence in 48.3% of repositories, it shows promise and is worth pursuing for projects that require robust build processes.",
+    "metadata": {
+      "repos_count": 42,
+      "usage_percentage": 48.3,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Kotlin",
     "quadrant": 3,
-    "ring": 0,
-    "description": "Strongly typed programming language that builds on JavaScript. Essential for large-scale applications."
+    "ring": 1,
+    "description": "Kotlin is a modern programming language that runs on the Java Virtual Machine and is widely used for Android app development. With a presence in 41.4% of repositories, it shows promise and is recommended for exploration in mobile projects.",
+    "metadata": {
+      "repos_count": 36,
+      "usage_percentage": 41.4,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Docker",
+    "name": "HCL",
     "quadrant": 2,
-    "ring": 0,
-    "description": "Platform for developing, shipping, and running applications in containers. Industry standard for containerization."
+    "ring": 2,
+    "description": "HCL (HashiCorp Configuration Language) is a configuration language used for defining infrastructure as code. With a presence in 23% of repositories, it indicates emerging usage, suggesting it is worth exploring for infrastructure management.",
+    "metadata": {
+      "repos_count": 20,
+      "usage_percentage": 23.0,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Kubernetes",
-    "quadrant": 2,
-    "ring": 0,
-    "description": "Container orchestration platform. Essential for managing containerized applications at scale."
+    "name": "JavaScript",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "JavaScript is a versatile programming language primarily used for web development, enabling interactive web pages. With a presence in 16.1% of repositories, it is in the Assess ring, suggesting it is worth exploring for projects but not yet widely adopted across all teams.",
+    "metadata": {
+      "repos_count": 14,
+      "usage_percentage": 16.1,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
     "name": "Python",
     "quadrant": 3,
     "ring": 2,
-    "description": "Versatile programming language. Great for data science, automation, and web development. Worth exploring for specific use cases."
+    "description": "Python is a high-level programming language known for its readability and versatility, commonly used in web development, data analysis, and automation. With its presence in 12.6% of repositories, it is in the Assess ring, suggesting it is worth exploring for various projects, especially in data-related fields.",
+    "metadata": {
+      "repos_count": 11,
+      "usage_percentage": 12.6,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Continuous Integration",
-    "quadrant": 0,
-    "ring": 0,
-    "description": "Practice of automating integration of code changes. Fundamental DevOps practice."
+    "name": "TypeScript",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "TypeScript is a superset of JavaScript that adds static typing, enhancing code quality and maintainability. With its presence in 11.5% of repositories, it shows emerging adoption, making it worth exploring for projects that require robust type safety.",
+    "metadata": {
+      "repos_count": 10,
+      "usage_percentage": 11.5,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Infrastructure as Code",
-    "quadrant": 0,
-    "ring": 0,
-    "description": "Managing infrastructure through machine-readable definition files. Essential for modern cloud operations."
+    "name": "HTML",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "HTML is the standard markup language for creating web pages and web applications. With its presence in 10.3% of repositories, it suggests emerging usage; thus, it is worth exploring for web development projects.",
+    "metadata": {
+      "repos_count": 9,
+      "usage_percentage": 10.3,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "GitHub Actions",
+    "name": "Gradle",
     "quadrant": 1,
-    "ring": 0,
-    "description": "CI/CD platform integrated with GitHub. Excellent for automation and workflow management."
-  },
-  {
-    "name": "Terraform",
-    "quadrant": 1,
-    "ring": 0,
-    "description": "Infrastructure as Code tool. Industry standard for multi-cloud infrastructure management."
-  },
-  {
-    "name": "PostgreSQL",
-    "quadrant": 2,
-    "ring": 0,
-    "description": "Advanced open-source relational database. Reliable, feature-rich, and battle-tested."
-  },
-  {
-    "name": "Next.js",
-    "quadrant": 3,
-    "ring": 1,
-    "description": "React framework with server-side rendering and static site generation. Growing ecosystem, worth pursuing for new projects."
-  },
-  {
-    "name": "Rust",
-    "quadrant": 3,
-    "ring": 1,
-    "description": "Systems programming language focused on safety and performance. Excellent for performance-critical applications."
-  },
-  {
-    "name": "Go (Golang)",
-    "quadrant": 3,
-    "ring": 1,
-    "description": "Fast, statically typed language designed for simplicity and efficiency. Excellent for microservices, CLI tools, and cloud-native applications."
-  },
-  {
-    "name": "GraphQL",
-    "quadrant": 0,
-    "ring": 1,
-    "description": "Query language for APIs. Provides flexibility in data fetching. Consider for API-heavy applications."
-  },
-  {
-    "name": "Micro Frontends",
-    "quadrant": 0,
-    "ring": 1,
-    "description": "Architectural style for splitting frontend into smaller, manageable pieces. Useful for large teams."
-  },
-  {
-    "name": "Deno",
-    "quadrant": 2,
     "ring": 2,
-    "description": "Modern runtime for JavaScript and TypeScript. Interesting alternative to Node.js, worth monitoring."
+    "description": "Gradle is a build automation tool used primarily for Java projects, enabling efficient project management and dependency resolution. With its presence in 10.3% of repositories, it suggests emerging usage, making it worth exploring for teams looking to enhance their build processes.",
+    "metadata": {
+      "repos_count": 9,
+      "usage_percentage": 10.3,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "WebAssembly",
-    "quadrant": 3,
-    "ring": 2,
-    "description": "Binary instruction format for web browsers. Promising for performance-intensive web applications."
-  },
-  {
-    "name": "Service Mesh",
-    "quadrant": 2,
-    "ring": 2,
-    "description": "Infrastructure layer for handling service-to-service communication. Evaluate for complex microservices architectures."
-  },
-  {
-    "name": "Svelte",
-    "quadrant": 3,
-    "ring": 2,
-    "description": "Frontend framework that compiles to vanilla JavaScript. Interesting approach, worth exploring."
-  },
-  {
-    "name": "Edge Computing",
-    "quadrant": 0,
-    "ring": 2,
-    "description": "Processing data closer to where it's generated. Assess for latency-sensitive applications."
-  },
-  {
-    "name": "Chaos Engineering",
-    "quadrant": 0,
-    "ring": 1,
-    "description": "Practice of testing system resilience by introducing failures. Valuable for distributed systems."
-  },
-  {
-    "name": "MongoDB",
-    "quadrant": 2,
-    "ring": 3,
-    "description": "Document-oriented database. Proceed with caution - consider use case carefully. Better alternatives exist for many scenarios."
-  },
-  {
-    "name": "Microservices by Default",
-    "quadrant": 0,
-    "ring": 3,
-    "description": "Starting with microservices architecture for all projects. Hold - start with monolith unless you have specific needs."
-  },
-  {
-    "name": "jQuery",
+    "name": "Ruby",
     "quadrant": 3,
     "ring": 3,
-    "description": "JavaScript library for DOM manipulation. Hold - modern frameworks provide better solutions."
+    "description": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity. With only 9.2% usage across repositories, it is in the Hold ring, suggesting limited adoption and recommending caution in new projects.",
+    "metadata": {
+      "repos_count": 8,
+      "usage_percentage": 9.2,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Selenium WebDriver",
+    "name": "React",
+    "quadrant": 3,
+    "ring": 3,
+    "description": "React is a popular JavaScript library for building user interfaces, particularly for single-page applications. With only 8% usage across repositories, it is in the Hold ring, suggesting limited adoption; proceed with caution and consider exploring further.",
+    "metadata": {
+      "repos_count": 7,
+      "usage_percentage": 8.0,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "SCSS",
+    "quadrant": 3,
+    "ring": 3,
+    "description": "SCSS is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS). With only 8% usage across repositories, it suggests limited adoption, so proceed with caution and consider exploring alternatives.",
+    "metadata": {
+      "repos_count": 7,
+      "usage_percentage": 8.0,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Jest",
     "quadrant": 1,
     "ring": 3,
-    "description": "Browser automation tool. Hold - newer tools like Playwright offer better developer experience."
+    "description": "Jest is a JavaScript testing framework designed for simplicity and ease of use. It is found in 5.7% of repositories, suggesting limited adoption, and is recommended for exploration in testing strategies.",
+    "metadata": {
+      "repos_count": 5,
+      "usage_percentage": 5.7,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "AWS",
+    "name": "Docker",
     "quadrant": 2,
-    "ring": 0,
-    "description": "Cloud computing platform. Industry leader with comprehensive service offerings."
+    "ring": 3,
+    "description": "Docker is a platform for developing, shipping, and running applications in containers, enabling consistent environments across development and production. With only 4.6% usage in repositories, it is in the Hold ring, suggesting limited adoption; it may be worth exploring for containerization needs.",
+    "metadata": {
+      "repos_count": 4,
+      "usage_percentage": 4.6,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Playwright",
+    "name": "CMake",
     "quadrant": 1,
-    "ring": 1,
-    "description": "Modern end-to-end testing framework. Excellent cross-browser support and developer experience."
+    "ring": 3,
+    "description": "CMake is an open-source build system generator that helps manage the build process of software projects across different platforms. With its presence in only 3.4% of repositories, it is suggested to hold off on widespread adoption until further evaluation of its utility in your projects.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Tailwind CSS",
+    "name": "C++",
     "quadrant": 3,
-    "ring": 1,
-    "description": "Utility-first CSS framework. Rapid UI development with consistent design system."
+    "ring": 3,
+    "description": "C++ is a general-purpose programming language known for its performance and efficiency, commonly used in system/software development and game programming. With only 3.4% presence in repositories, it is classified in the Hold ring, suggesting limited use and recommending caution in its adoption.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "high",
+      "ai_model": "gpt-4o-mini"
+    }
   },
   {
-    "name": "Feature Flags",
-    "quadrant": 0,
-    "ring": 0,
-    "description": "Technique for enabling/disabling features at runtime. Essential for continuous deployment."
-  },
-  {
-    "name": "Design Systems",
-    "quadrant": 0,
-    "ring": 0,
-    "description": "Collection of reusable components and guidelines. Critical for consistent UX across products."
-  },
-  {
-    "name": "API-First Design",
-    "quadrant": 0,
-    "ring": 0,
-    "description": "Designing APIs before implementation. Promotes better integration and parallel development."
-  },
-  {
-    "name": "Astro",
+    "name": "Go",
     "quadrant": 3,
-    "ring": 2,
-    "description": "Modern static site builder. Interesting for content-heavy sites, worth exploring."
+    "ring": 3,
+    "description": "Go is a statically typed, compiled programming language designed for simplicity and efficiency. Its presence in only 3.4% of repositories suggests limited adoption, placing it in the Hold ring; proceed with caution and consider exploring its potential.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Smarty",
+    "quadrant": 1,
+    "ring": 3,
+    "description": "Smarty is a templating engine for PHP that simplifies the process of generating dynamic web content. With its presence in only 3.4% of repositories, it suggests limited adoption, so it is recommended to explore its capabilities before fully committing.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "ESLint",
+    "quadrant": 1,
+    "ring": 3,
+    "description": "ESLint is a static code analysis tool for identifying problematic patterns in JavaScript code. With its presence in only 3.4% of repositories, it's in the Hold ring, suggesting limited adoption; however, it is still recommended to explore for improving code quality.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Prettier",
+    "quadrant": 1,
+    "ring": 3,
+    "description": "Prettier is an opinionated code formatter that enforces consistent style across codebases. With its presence in only 3.4% of repositories, it suggests limited adoption, warranting a Hold recommendation for further exploration.",
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 3.4,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
+  },
+  {
+    "name": "Open Policy Agent",
+    "quadrant": 0,
+    "ring": 3,
+    "description": "Open Policy Agent (OPA) is a policy engine that enables unified policy enforcement across various systems and services. With its presence in only 2.3% of repositories, it suggests limited adoption, thus it is recommended to proceed with caution and explore its potential use cases.",
+    "metadata": {
+      "repos_count": 2,
+      "usage_percentage": 2.3,
+      "total_repos": 87,
+      "confidence": "medium",
+      "ai_model": "gpt-4o-mini"
+    }
   }
 ]

@@ -1,0 +1,86 @@
+github:
+  # Organizations to scan
+  organizations:
+    - bazaartechnologies
+
+  # Repository limit (0 or omit for no limit)
+  # Useful for testing - e.g., scan only first 100 repos
+  repo_limit: 0  # 0 = scan all repos
+
+  # Repository filters
+  exclude_repos:
+    - "*-archived"
+    - "test-*"
+    - "legacy-*"
+
+  # Repository requirements
+  min_stars: 0
+  include_forks: false
+  include_archived: false
+  include_private: true
+
+openai:
+  # Model to use (gpt-4o-mini is recommended for cost/performance balance)
+  model: gpt-4o-mini
+
+  # Token limits
+  max_tokens: 1000
+  temperature: 0.3  # Lower = more consistent responses
+
+  # Retry configuration
+  max_retries: 3
+  timeout: 30
+
+classification:
+  # Usage-based thresholds (percentage of repos)
+  thresholds:
+    adopt: 0.70   # 70%+ of repos
+    trial: 0.40   # 40-70% of repos
+    assess: 0.10  # 10-40% of repos
+    # Below 10% = Hold
+
+  # Minimum repos for a tech to be included
+  min_repos: 2
+
+  # Technology filters (exclude internal/proprietary tools)
+  exclude_patterns:
+    - "*-internal"
+    - "custom-*"
+    - "proprietary-*"
+
+output:
+  # Output file path (relative to data-etl directory)
+  file: ../data.ai.json
+
+  # Format: pretty (indented) or compact (minified)
+  format: pretty
+
+  # Include metadata (repos_count, usage_percentage, etc.)
+  include_metadata: true
+
+  # Sort entries by: usage, name, or ring
+  sort_by: usage
+
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: INFO
+
+  # Log file path
+  file: logs/scan.log
+
+  # Console output
+  console: true
+
+# Rate limiting (GitHub has strict limits)
+rate_limit:
+  # Max requests per minute (GitHub search API limit is 30/min)
+  max_per_minute: 25
+
+  # Safety threshold - pause if remaining requests < this
+  safety_threshold: 100
+
+# Progress tracking for resumability
+checkpoint:
+  enabled: true
+  file: .scan_progress.json
+  save_interval: 10  # Save after every N repos
