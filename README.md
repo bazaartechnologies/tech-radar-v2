@@ -1,12 +1,24 @@
-# Technology Radar - Premium Interactive Visualization
+# Technology Radar - AI-Powered & Interactive
 
-A world-class interactive technology radar with stunning UI/UX, inspired by Thoughtworks. Built with modern web technologies for maximum visual appeal and usability.
+A world-class interactive technology radar with AI-powered data collection and stunning UI/UX, inspired by Thoughtworks. Automatically scans GitHub organizations to detect technologies, analyze adoption patterns, and classify them with domain-aware intelligence.
+
+## 🤖 Key Features
+
+- **AI-Powered Technology Detection**: Automatically scans GitHub repositories to identify technologies
+- **Domain-Aware Classification**: Segments analysis by engineering domain (mobile, backend, frontend, infrastructure, etc.)
+- **Temporal Analysis**: Tracks adoption trends over time (recent, legacy, active, stale repos)
+- **Smart Ring Decisions**: AI-assisted classification into Adopt/Trial/Assess/Hold rings
+- **Resumable Scanning**: Checkpoint system allows pausing and resuming long scans
+- **Rate-Limited & Safe**: Respects GitHub API limits with intelligent throttling
+- **Organization-Agnostic**: Works with any GitHub organization without hardcoded patterns
 
 ## 🚀 Quick Start
 
+### Option 1: View the Radar (Frontend Only)
+
 **⚠️ Important:** Due to browser security (CORS), you need to run a local server. Opening `index.html` directly won't work.
 
-### Easiest Method - Use the Startup Script
+#### Easiest Method - Use the Startup Script
 
 **macOS/Linux:**
 ```bash
@@ -33,7 +45,61 @@ npx serve
 php -S localhost:8000
 ```
 
-**To add a technology:** Edit `data.json` → Add new entry → Save → Refresh browser
+**To add a technology:**
+- **Manual**: Edit `data.json` → Add new entry → Save → Refresh browser
+- **Automated**: Use the ETL pipeline (see Option 2 below)
+
+### Option 2: Generate Data Automatically (AI-Powered ETL)
+
+**Prerequisites:**
+- Python 3.8+
+- GitHub Personal Access Token
+- OpenAI API Key
+
+**Setup:**
+```bash
+cd data-etl
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Configure your organization
+# Edit config/config.yaml and set:
+#   - github.organizations: [your-org-name]
+#   - Add GITHUB_TOKEN to environment
+#   - Add OPENAI_API_KEY to environment
+
+export GITHUB_TOKEN="ghp_your_token_here"
+export OPENAI_API_KEY="sk-your_key_here"
+
+# Run the scanner
+python3 src/main.py
+```
+
+**Advanced Usage:**
+
+```bash
+# Limit to first 50 repos (for testing)
+python3 src/main.py --limit 50
+
+# Resume from checkpoint if interrupted
+python3 src/main.py --resume
+
+# Clear checkpoint and start fresh
+python3 src/main.py --clear-checkpoint
+
+# Combine options
+python3 src/main.py --limit 100 --resume
+```
+
+The ETL pipeline will:
+1. Scan all repositories in your GitHub organization
+2. Detect technologies from file patterns and languages
+3. Use AI to determine repository domain (mobile, backend, etc.)
+4. Analyze temporal patterns (recent adoption, legacy usage, activity)
+5. Classify technologies into rings with AI assistance
+6. Generate domain-specific breakdowns
+7. Output to `data.json` with rich metadata
 
 ## 📋 Quick Reference
 
@@ -45,6 +111,185 @@ php -S localhost:8000
 | Rename quadrant | `radar.js` | Edit `quadrants` array names |
 | Change colors | `styles.css` or `radar.js` | Edit CSS variables or ring colors |
 | Customize theme | `styles.css` | Edit `:root` variables |
+
+## 📊 Data Schema
+
+### Output Format (`data.json` / `data.ai.json`)
+
+The ETL pipeline generates a JSON file with the following structure:
+
+```json
+[
+  {
+    "name": "Java",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "Java is used in 61.5% of repositories...",
+    "confidence": 0.85,
+    "metadata": {
+      "repos_count": 24,
+      "usage_percentage": 61.5,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 24,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 24,
+        "active_repos": 16,
+        "stale_repos": 8,
+        "avg_age_months": 58.2,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.667,
+        "repos_list": ["repo1", "repo2"],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 7,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 5,
+            "recency_score": 0.0,
+            "activity_score": 0.714,
+            "trend": "STABLE"
+          },
+          "backend": {
+            "total_repos": 11,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 9,
+            "recency_score": 0.0,
+            "activity_score": 0.818,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.615,
+      "recency_score": 0.0,
+      "activity_score": 0.667,
+      "domain_breakdown": {
+        "mobile": {
+          "suggested_ring": 0,
+          "ring_name": "Adopt",
+          "confidence": 0.9,
+          "total_repos": 7,
+          "recent_repos": 0,
+          "activity_score": 0.714,
+          "trend": "STABLE"
+        },
+        "backend": {
+          "suggested_ring": 0,
+          "ring_name": "Adopt",
+          "confidence": 0.9,
+          "total_repos": 11,
+          "recent_repos": 0,
+          "activity_score": 0.818,
+          "trend": "STABLE"
+        }
+      }
+    },
+    "decision_factors": [
+      "✓ High usage (61.5%)",
+      "✗ No new adoption in last 6 months",
+      "• 67% of repos actively maintained",
+      "➡ Trend: STABLE"
+    ],
+    "needs_review": false
+  }
+]
+```
+
+### Field Descriptions
+
+**Core Fields:**
+- `name`: Technology name (e.g., "Java", "React", "Kubernetes")
+- `quadrant`: Category (0=Techniques, 1=Tools, 2=Platforms, 3=Languages & Frameworks)
+- `ring`: Adoption level (0=Adopt, 1=Trial, 2=Assess, 3=Hold)
+- `description`: AI-generated description explaining the classification
+- `confidence`: AI confidence score (0.0-1.0)
+
+**Metadata:**
+- `repos_count`: Number of repositories using this technology
+- `usage_percentage`: Percentage of total repositories
+- `ai_confidence`: "high", "medium", or "low"
+- `ai_model`: OpenAI model used for classification
+
+**Temporal Data:**
+- `total_repos`: Total repositories using this tech
+- `recent_repos`: Repos with activity in last 6 months
+- `new_repos`: Repos created in last 6 months
+- `legacy_repos`: Repos older than 2 years
+- `active_repos`: Repos with commits in last 3 months
+- `stale_repos`: Repos with no commits in last 6 months
+- `avg_age_months`: Average repository age
+- `trend`: "GROWING", "STABLE", "DECLINING", or "ABANDONED"
+- `recency_score`: Normalized recency metric (0.0-1.0)
+- `activity_score`: Normalized activity metric (0.0-1.0)
+- `by_domain`: Per-domain breakdown of temporal metrics
+
+**Domain Breakdown:**
+- Per-domain classification showing different rings for different contexts
+- Example: Java might be "Adopt" for mobile but "Assess" for backend
+- Each domain includes: suggested_ring, ring_name, confidence, metrics
+
+**Decision Factors:**
+- Human-readable list explaining the classification reasoning
+- Shows key metrics that influenced the decision
+
+**Supported Domains:**
+- `mobile`: Mobile applications (iOS, Android, React Native, Flutter)
+- `backend`: Backend services and APIs
+- `frontend`: Web frontend applications
+- `infrastructure`: DevOps, IaC, deployment tools
+- `data`: Data engineering, ETL, analytics
+- `ml`: Machine learning and AI projects
+- `library`: Shared libraries and SDKs
+- `tooling`: Developer tools and utilities
+
+## 🔄 ETL Pipeline Features
+
+### Resume Capability
+The scanner saves checkpoints every 10 repositories (configurable). If interrupted:
+```bash
+python3 src/main.py --resume
+```
+
+### Checkpoint Files
+- `.scan_progress.json`: Tracks scan progress (repos processed, last position)
+- Automatically created during scans
+- Can be cleared with `--clear-checkpoint`
+
+### Rate Limiting
+- Respects GitHub API limits (30 searches/minute)
+- Configurable safety threshold (default: pause at 100 remaining requests)
+- Automatic retry with exponential backoff
+
+### Configuration (`config/config.yaml`)
+```yaml
+github:
+  organizations: [your-org-name]
+  repo_limit: 0  # 0 = scan all, or set a limit for testing
+  min_stars: 0
+  include_private: true
+  include_archived: false
+
+openai:
+  model: gpt-4o-mini
+  max_tokens: 1000
+  temperature: 0.3
+
+classification:
+  min_repos: 2  # Minimum repos to include a technology
+  thresholds:
+    adopt: 0.70   # 70%+ usage
+    trial: 0.40   # 40-70% usage
+    assess: 0.10  # 10-40% usage
+
+checkpoint:
+  enabled: true
+  save_interval: 10  # Save every N repos
+```
 
 ## Philosophy
 
@@ -390,13 +635,31 @@ Then open http://localhost:8000 in your browser.
 
 ```
 tech-radar/
-├── index.html      # Main HTML structure
-├── styles.css      # All styling and themes
-├── radar.js        # Radar logic and interactions
-├── data.json       # Technology data (EDIT THIS FILE)
-├── README.md       # Complete documentation
-├── start.sh        # Startup script for macOS/Linux
-└── start.bat       # Startup script for Windows
+├── index.html           # Main HTML structure
+├── styles.css           # All styling and themes
+├── radar.js             # Radar logic and interactions
+├── data.json            # Technology data (manually edited OR generated)
+├── README.md            # Complete documentation
+├── start.sh             # Startup script for macOS/Linux
+├── start.bat            # Startup script for Windows
+│
+└── data-etl/            # AI-powered ETL pipeline
+    ├── src/
+    │   ├── main.py                  # Entry point
+    │   ├── scanner.py               # GitHub repository scanner
+    │   ├── domain_detector.py       # AI-powered domain detection
+    │   ├── temporal_analyzer.py     # Temporal pattern analysis
+    │   ├── classifier_enhanced.py   # AI-assisted classification
+    │   ├── output_generator.py      # JSON output generation
+    │   ├── progress.py              # Checkpoint management
+    │   └── rate_limiter.py          # GitHub API rate limiting
+    │
+    ├── config/
+    │   └── config.yaml              # Configuration file
+    │
+    ├── requirements.txt             # Python dependencies
+    ├── .scan_progress.json          # Checkpoint file (auto-generated)
+    └── README.md                    # ETL documentation
 ```
 
 ## Customization
@@ -439,13 +702,46 @@ this.quadrants = [
 4. Better alternative found → Move old tech to "Hold"
 5. No longer relevant → Remove from radar
 
-## Contributing
+## 🌍 Organization-Agnostic Design
+
+This tool is designed to work with **any GitHub organization** without modification:
+
+- **No hardcoded patterns**: Domain detection uses AI to analyze repository structure
+- **No org-specific logic**: All organization names are in `config/config.yaml`
+- **Fully configurable**: All thresholds, filters, and rules are in configuration
+- **Universal domains**: Standard domains (mobile, backend, frontend, etc.) work for any organization
+- **Extensible**: Easy to add custom domains or classification rules
+
+**To use with your organization:**
+1. Edit `data-etl/config/config.yaml`
+2. Replace `your-org-name` with your GitHub organization
+3. Set your API keys as environment variables
+4. Run the scanner - it will adapt to your organization's structure automatically
+
+The AI-powered domain detector analyzes:
+- Repository directory structure
+- File types and distribution
+- README content and descriptions
+- Technology stack and patterns
+- Repository topics and metadata
+
+No manual pattern configuration required!
+
+## 🤝 Contributing
 
 To suggest changes:
-1. Edit `data.json`
+1. Edit `data.json` (manual) or run the ETL pipeline (automated)
 2. Commit with a clear message explaining the change
 3. Submit for review (if using version control)
 
-## License
+## 📝 License
 
 Open source - use and modify as needed for your organization.
+
+---
+
+**Built with:**
+- Frontend: Vanilla JavaScript, CSS3, SVG
+- ETL Pipeline: Python 3.8+, PyGithub, OpenAI API
+- AI Models: GPT-4o-mini for classification and domain detection
+- Design: Inspired by Thoughtworks Technology Radar

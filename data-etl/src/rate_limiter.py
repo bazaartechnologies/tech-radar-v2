@@ -77,7 +77,7 @@ class RateLimiter:
         return {
             'remaining': core_limit.remaining,
             'limit': core_limit.limit,
-            'reset': core_limit.reset,
+            'reset': core_limit.reset.isoformat() if core_limit.reset else None,
             'used': core_limit.limit - core_limit.remaining
         }
 

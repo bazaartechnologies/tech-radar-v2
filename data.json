@@ -3,325 +3,1632 @@
     "name": "Makefile",
     "quadrant": 1,
     "ring": 0,
-    "description": "Makefile is a build automation tool that defines a set of tasks to be executed. With a presence in 70.1% of repositories, it demonstrates strong adoption and is recommended for streamlining build processes.",
+    "description": "Makefile is a build automation tool that is widely used in software development for managing project builds and dependencies. It is considered mature and an industry standard, making it suitable for production environments, especially in projects that require consistent build processes.",
+    "confidence": 0.64,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 61,
-      "usage_percentage": 70.1,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 26,
+      "usage_percentage": 66.7,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 26,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 26,
+        "active_repos": 14,
+        "stale_repos": 12,
+        "avg_age_months": 58.7,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.538,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "iac",
+          "watchman",
+          "sql-commander",
+          "bazaar-common",
+          "data-pipelines",
+          "bazaar-microservices-kafka",
+          "bazaar-redash",
+          "bazaar-zone-service",
+          "bazaar-inventory-service"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 7,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 2,
+            "recency_score": 0.0,
+            "activity_score": 0.286,
+            "trend": "ABANDONED"
+          },
+          "tooling": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "library": {
+            "total_repos": 4,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.25,
+            "trend": "ABANDONED"
+          },
+          "data": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "backend": {
+            "total_repos": 11,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 10,
+            "recency_score": 0.0,
+            "activity_score": 0.909,
+            "trend": "STABLE"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.667,
+      "recency_score": 0.0,
+      "activity_score": 0.538,
+      "decision_factors": [
+        "\u2713 High usage (66.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2022 54% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "Java",
     "quadrant": 3,
-    "ring": 1,
-    "description": "Java is a widely-used programming language known for its portability across platforms and strong community support. With its presence in 59.8% of repositories, it shows promise but is still in the Trial ring, making it worth exploring for new projects.",
+    "ring": 0,
+    "description": "Java is a mature, widely-used programming language known for its portability, performance, and extensive ecosystem. It remains an industry standard for enterprise applications, making it suitable for production environments despite recent stagnation in adoption within your repositories.",
+    "confidence": 0.64,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 52,
-      "usage_percentage": 59.8,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 24,
+      "usage_percentage": 61.5,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 24,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 24,
+        "active_repos": 17,
+        "stale_repos": 7,
+        "avg_age_months": 58.2,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.708,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "bazaar-agent-android-app",
+          "bazaar-common",
+          "bazaar-khaata-android-app",
+          "bazaar-zone-service",
+          "bazaar-inventory-service",
+          "bazaar-sales-service",
+          "bazaar-fulfilment-service",
+          "Bazaar-Android-MVVM-Architecture",
+          "Bazaar-Android-MVI-Architecture-Kotlin"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 7,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 5,
+            "recency_score": 0.0,
+            "activity_score": 0.714,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 4,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.25,
+            "trend": "ABANDONED"
+          },
+          "backend": {
+            "total_repos": 11,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 10,
+            "recency_score": 0.0,
+            "activity_score": 0.909,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.615,
+      "recency_score": 0.0,
+      "activity_score": 0.708,
+      "decision_factors": [
+        "\u2713 High usage (61.5%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 71% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "Shell",
-    "quadrant": 0,
-    "ring": 1,
-    "description": "Shell is a command-line interface used for interacting with the operating system and executing scripts. With a presence in 57.5% of repositories, it shows significant usage and is worth pursuing for automation and scripting tasks.",
-    "metadata": {
-      "repos_count": 50,
-      "usage_percentage": 57.5,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Dockerfile",
     "quadrant": 1,
-    "ring": 1,
-    "description": "A Dockerfile is a script containing a series of instructions on how to build a Docker image. With 54% usage across repositories, it shows promise for containerization practices, making it worth pursuing.",
+    "ring": 0,
+    "description": "Shell is a command-line interface and scripting language that is widely used for automating tasks and managing system operations. It is classified as Adopt due to its maturity, proven reliability, and extensive use in the industry, making it an essential tool for developers and system administrators.",
+    "confidence": 0.74,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 47,
-      "usage_percentage": 54.0,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "GitHub Actions",
-    "quadrant": 1,
-    "ring": 1,
-    "description": "GitHub Actions is a CI/CD tool that automates workflows directly within GitHub repositories. With a presence in 49.4% of repositories, it shows promise for adoption, making it worth pursuing for automation needs.",
-    "metadata": {
-      "repos_count": 43,
-      "usage_percentage": 49.4,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Maven",
-    "quadrant": 1,
-    "ring": 1,
-    "description": "Maven is a build automation tool primarily used for Java projects, facilitating project management and dependency management. With a presence in 48.3% of repositories, it shows promise and is worth pursuing for projects that require robust build processes.",
-    "metadata": {
-      "repos_count": 42,
-      "usage_percentage": 48.3,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 21,
+      "usage_percentage": 53.8,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 21,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 21,
+        "active_repos": 17,
+        "stale_repos": 4,
+        "avg_age_months": 59.5,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.81,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "commando",
+          "iac",
+          "watchman",
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app",
+          "data-pipelines",
+          "bazaar-microservices-kafka",
+          "bazaar-redash",
+          "bazaar-zone-service"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 5,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 5,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "frontend": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 5,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 2,
+            "recency_score": 0.0,
+            "activity_score": 0.4,
+            "trend": "DECLINING"
+          },
+          "data": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "backend": {
+            "total_repos": 8,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 8,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.538,
+      "recency_score": 0.0,
+      "activity_score": 0.81,
+      "decision_factors": [
+        "\u2713 High usage (53.8%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 81% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "Kotlin",
     "quadrant": 3,
-    "ring": 1,
-    "description": "Kotlin is a modern programming language that runs on the Java Virtual Machine and is widely used for Android app development. With a presence in 41.4% of repositories, it shows promise and is recommended for exploration in mobile projects.",
+    "ring": 0,
+    "description": "Kotlin is a modern programming language that is fully interoperable with Java and has gained significant traction in the Android development community. Its mature ecosystem, strong community support, and proven performance make it a reliable choice for production environments, justifying its classification in the Adopt ring.",
+    "confidence": 0.64,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 36,
-      "usage_percentage": 41.4,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 19,
+      "usage_percentage": 48.7,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 19,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 19,
+        "active_repos": 14,
+        "stale_repos": 5,
+        "avg_age_months": 58.7,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.737,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "bazaar-agent-android-app",
+          "bazaar-common",
+          "bazaar-khaata-android-app",
+          "bazaar-zone-service",
+          "bazaar-inventory-service",
+          "bazaar-sales-service",
+          "bazaar-fulfilment-service",
+          "Bazaar-Android-MVVM-Architecture",
+          "Bazaar-Android-MVI-Architecture-Kotlin"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 7,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 5,
+            "recency_score": 0.0,
+            "activity_score": 0.714,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "backend": {
+            "total_repos": 8,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 7,
+            "recency_score": 0.0,
+            "activity_score": 0.875,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.487,
+      "recency_score": 0.0,
+      "activity_score": 0.737,
+      "decision_factors": [
+        "\u2022 Medium usage (48.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 74% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "GitHub Actions",
+    "quadrant": 1,
+    "ring": 0,
+    "description": "GitHub Actions is a powerful CI/CD tool that enables automation of workflows directly within GitHub repositories. It is classified as 'Adopt' due to its maturity, widespread industry adoption, and integration with the GitHub ecosystem, making it a standard choice for automating software development processes.",
+    "confidence": 0.74,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 17,
+      "usage_percentage": 43.6,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 17,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 17,
+        "active_repos": 17,
+        "stale_repos": 0,
+        "avg_age_months": 58.7,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "commando",
+          "iac",
+          "bazaar-zone-service",
+          "bazaar-inventory-service",
+          "bazaar-sales-service",
+          "bazaar-fulfilment-service",
+          "bazaar-shipper-android-app",
+          "bazaar-promo",
+          "bazaar-agent"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 3,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 3,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "frontend": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 2,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "backend": {
+            "total_repos": 10,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 10,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.436,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2022 Medium usage (43.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Dockerfile",
+    "quadrant": 1,
+    "ring": 0,
+    "description": "A Dockerfile is a text document that contains all the commands to assemble an image for Docker containers. It is in the Adopt ring due to its maturity, widespread industry usage, and its status as a standard practice for containerization in modern software development.",
+    "confidence": 0.64,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 17,
+      "usage_percentage": 43.6,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 17,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 17,
+        "active_repos": 12,
+        "stale_repos": 5,
+        "avg_age_months": 57.9,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.706,
+        "repos_list": [
+          "iac",
+          "bazaar-redash",
+          "bazaar-zone-service",
+          "bazaar-inventory-service",
+          "bazaar-sales-service",
+          "bazaar-fulfilment-service",
+          "bazaar-promo",
+          "bazaar-agent",
+          "bazaar-recommendation-service",
+          "bazaar-recommendation-engine"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 5,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 2,
+            "recency_score": 0.0,
+            "activity_score": 0.4,
+            "trend": "DECLINING"
+          },
+          "backend": {
+            "total_repos": 11,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 10,
+            "recency_score": 0.0,
+            "activity_score": 0.909,
+            "trend": "STABLE"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.436,
+      "recency_score": 0.0,
+      "activity_score": 0.706,
+      "decision_factors": [
+        "\u2022 Medium usage (43.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 71% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Maven",
+    "quadrant": 1,
+    "ring": 0,
+    "description": "Maven is a widely-used build automation tool primarily for Java projects, known for its dependency management and project management capabilities. It is classified as Adopt due to its maturity, proven track record in the industry, and strong community support, making it a reliable choice for production environments.",
+    "confidence": 0.64,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 16,
+      "usage_percentage": 41.0,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 16,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 16,
+        "active_repos": 11,
+        "stale_repos": 5,
+        "avg_age_months": 57.6,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.688,
+        "repos_list": [
+          "bazaar-common",
+          "bazaar-zone-service",
+          "bazaar-inventory-service",
+          "bazaar-sales-service",
+          "bazaar-fulfilment-service",
+          "bazaar-promo",
+          "bazaar-agent",
+          "bazaar-recommendation-service",
+          "bazaar-recommendation-engine",
+          "bazaar-notification"
+        ],
+        "by_domain": {
+          "library": {
+            "total_repos": 3,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "backend": {
+            "total_repos": 11,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 10,
+            "recency_score": 0.0,
+            "activity_score": 0.909,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.41,
+      "recency_score": 0.0,
+      "activity_score": 0.688,
+      "decision_factors": [
+        "\u2022 Medium usage (41.0%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2022 69% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "HCL",
     "quadrant": 2,
     "ring": 2,
-    "description": "HCL (HashiCorp Configuration Language) is a configuration language used for defining infrastructure as code. With a presence in 23% of repositories, it indicates emerging usage, suggesting it is worth exploring for infrastructure management.",
+    "description": "HCL (HashiCorp Configuration Language) is a domain-specific language used for defining infrastructure as code, primarily in HashiCorp's tools like Terraform. It is currently in the Assess ring due to its stable usage in existing repositories but lacks recent adoption, indicating it may not be widely embraced yet despite its potential.",
+    "confidence": 0.46,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 20,
-      "usage_percentage": 23.0,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 8,
+      "usage_percentage": 20.5,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 8,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 8,
+        "active_repos": 4,
+        "stale_repos": 4,
+        "avg_age_months": 59.2,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.5,
+        "repos_list": [
+          "iac",
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app",
+          "data-pipelines",
+          "bazaar-recommendation-engine",
+          "bazaar-events",
+          "control-tower",
+          "bazaar-warehouse-operations-android-app"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "mobile": {
+            "total_repos": 3,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 3,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "data": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "ml": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "frontend": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.205,
+      "recency_score": 0.0,
+      "activity_score": 0.5,
+      "decision_factors": [
+        "\u2022 Medium usage (20.5%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2022 50% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
-    "name": "JavaScript",
+    "name": "Ruby",
     "quadrant": 3,
     "ring": 2,
-    "description": "JavaScript is a versatile programming language primarily used for web development, enabling interactive web pages. With a presence in 16.1% of repositories, it is in the Assess ring, suggesting it is worth exploring for projects but not yet widely adopted across all teams.",
+    "description": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity, often used in web development, particularly with the Ruby on Rails framework. It is classified in the 'Assess' ring due to its stable usage in existing repositories but lack of recent adoption, indicating a potential stagnation in its ecosystem compared to newer languages and frameworks.",
+    "confidence": 0.56,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 14,
-      "usage_percentage": 16.1,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Python",
-    "quadrant": 3,
-    "ring": 2,
-    "description": "Python is a high-level programming language known for its readability and versatility, commonly used in web development, data analysis, and automation. With its presence in 12.6% of repositories, it is in the Assess ring, suggesting it is worth exploring for various projects, especially in data-related fields.",
-    "metadata": {
-      "repos_count": 11,
-      "usage_percentage": 12.6,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "TypeScript",
-    "quadrant": 3,
-    "ring": 2,
-    "description": "TypeScript is a superset of JavaScript that adds static typing, enhancing code quality and maintainability. With its presence in 11.5% of repositories, it shows emerging adoption, making it worth exploring for projects that require robust type safety.",
-    "metadata": {
-      "repos_count": 10,
-      "usage_percentage": 11.5,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "HTML",
-    "quadrant": 3,
-    "ring": 2,
-    "description": "HTML is the standard markup language for creating web pages and web applications. With its presence in 10.3% of repositories, it suggests emerging usage; thus, it is worth exploring for web development projects.",
-    "metadata": {
-      "repos_count": 9,
-      "usage_percentage": 10.3,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 7,
+      "usage_percentage": 17.9,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 7,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 7,
+        "active_repos": 7,
+        "stale_repos": 0,
+        "avg_age_months": 60.5,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "iac",
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app",
+          "bazaar-shipper-android-app",
+          "bazaar-android-libraries",
+          "bazaar-warehouse-operations-android-app"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 5,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 5,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.179,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (17.9%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "Gradle",
     "quadrant": 1,
     "ring": 2,
-    "description": "Gradle is a build automation tool used primarily for Java projects, enabling efficient project management and dependency resolution. With its presence in 10.3% of repositories, it suggests emerging usage, making it worth exploring for teams looking to enhance their build processes.",
-    "metadata": {
-      "repos_count": 9,
-      "usage_percentage": 10.3,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Ruby",
-    "quadrant": 3,
-    "ring": 3,
-    "description": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity. With only 9.2% usage across repositories, it is in the Hold ring, suggesting limited adoption and recommending caution in new projects.",
-    "metadata": {
-      "repos_count": 8,
-      "usage_percentage": 9.2,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "React",
-    "quadrant": 3,
-    "ring": 3,
-    "description": "React is a popular JavaScript library for building user interfaces, particularly for single-page applications. With only 8% usage across repositories, it is in the Hold ring, suggesting limited adoption; proceed with caution and consider exploring further.",
+    "description": "Gradle is a powerful build automation tool that is widely used in the software development industry, particularly for Java projects. It is placed in the Assess ring due to its stable usage in some repositories, but lack of recent adoption suggests that teams may be exploring other tools or alternatives, warranting further evaluation.",
+    "confidence": 0.46,
+    "needs_review": true,
     "metadata": {
       "repos_count": 7,
-      "usage_percentage": 8.0,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
+      "usage_percentage": 17.9,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 7,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 7,
+        "active_repos": 5,
+        "stale_repos": 2,
+        "avg_age_months": 58.4,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.714,
+        "repos_list": [
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app",
+          "Bazaar-Android-MVVM-Architecture",
+          "Bazaar-Android-MVI-Architecture-Kotlin",
+          "bazaar-shipper-android-app",
+          "bazaar-android-libraries",
+          "bazaar-warehouse-operations-android-app"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 6,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 4,
+            "recency_score": 0.0,
+            "activity_score": 0.667,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.179,
+      "recency_score": 0.0,
+      "activity_score": 0.714,
+      "decision_factors": [
+        "\u2717 Low usage (17.9%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 71% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "JavaScript",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "JavaScript is a widely-used programming language primarily for web development, enabling interactive web pages and serving as a foundation for numerous frameworks and libraries. It is classified in the Assess ring due to its established presence in the industry, but the lack of recent adoption in your repositories suggests a need to evaluate its continued relevance against emerging alternatives.",
+    "confidence": 0.52,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 6,
+      "usage_percentage": 15.4,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 6,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 6,
+        "active_repos": 3,
+        "stale_repos": 3,
+        "avg_age_months": 59.3,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.5,
+        "repos_list": [
+          "commando",
+          "iac",
+          "bazaar-identity-service",
+          "bazaar-appscript",
+          "control-tower",
+          "bazaar-shared-login"
+        ],
+        "by_domain": {
+          "frontend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "backend": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "unknown": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.154,
+      "recency_score": 0.0,
+      "activity_score": 0.5,
+      "decision_factors": [
+        "\u2717 Low usage (15.4%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2022 50% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "HTML",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. While it remains foundational for web development, its classification in the Assess ring reflects the emergence of newer technologies and frameworks that enhance or extend its capabilities, leading to a stable but less innovative status in the current landscape.",
+    "confidence": 0.52,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 5,
+      "usage_percentage": 12.8,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 5,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 5,
+        "active_repos": 4,
+        "stale_repos": 1,
+        "avg_age_months": 59.5,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 0.8,
+        "repos_list": [
+          "commando",
+          "bazaar-khaata-android-app",
+          "bazaar-inventory-service",
+          "bazaar-identity-service",
+          "control-tower"
+        ],
+        "by_domain": {
+          "frontend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "mobile": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          },
+          "backend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 2,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.128,
+      "recency_score": 0.0,
+      "activity_score": 0.8,
+      "decision_factors": [
+        "\u2717 Low usage (12.8%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 80% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Python",
+    "quadrant": 3,
+    "ring": 3,
+    "description": "Python is a high-level programming language known for its readability and versatility. Despite its historical significance and widespread use, the current trend indicates abandonment in your repositories, suggesting that better alternatives or newer technologies may be preferred for current projects.",
+    "confidence": 0.62,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 4,
+      "usage_percentage": 10.3,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 4,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 4,
+        "active_repos": 1,
+        "stale_repos": 3,
+        "avg_age_months": 61.8,
+        "trend": "ABANDONED",
+        "recency_score": 0.0,
+        "activity_score": 0.25,
+        "repos_list": [
+          "iac",
+          "sql-commander",
+          "data-pipelines",
+          "bazaar-redash"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "tooling": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          },
+          "data": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.103,
+      "recency_score": 0.0,
+      "activity_score": 0.25,
+      "decision_factors": [
+        "\u2717 Low usage (10.3%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2717 Only 25% of repos actively maintained",
+        "\ud83d\udc80 Trend: ABANDONED"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "C++",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "C++ is a widely-used programming language known for its performance and efficiency, particularly in systems programming and applications requiring high-performance computing. It is placed in the Assess ring due to its stable usage in existing repositories, but the lack of recent adoption suggests that teams may be exploring more modern alternatives or languages better suited for contemporary development practices.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 7.7,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 3,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 3,
+        "stale_repos": 0,
+        "avg_age_months": 63.3,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 3,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 3,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.077,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (7.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "CMake",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "CMake is a widely-used build system generator that facilitates the management of complex build processes across multiple platforms. While it is stable and has a solid presence in the industry, its recent lack of adoption in your repositories suggests it may be worth exploring further before fully integrating it into new projects.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 7.7,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 3,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 3,
+        "stale_repos": 0,
+        "avg_age_months": 63.3,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "bazaar-customer-android-app",
+          "bazaar-agent-android-app",
+          "bazaar-khaata-android-app"
+        ],
+        "by_domain": {
+          "mobile": {
+            "total_repos": 3,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 3,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.077,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (7.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "SCSS",
     "quadrant": 3,
-    "ring": 3,
-    "description": "SCSS is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS). With only 8% usage across repositories, it suggests limited adoption, so proceed with caution and consider exploring alternatives.",
+    "ring": 2,
+    "description": "SCSS (Sassy CSS) is a CSS preprocessor that extends CSS with features like variables, nested rules, and mixins, enhancing the styling capabilities of web applications. It is currently in the Assess ring due to declining usage trends, limited recent adoption, and the availability of more modern alternatives like CSS-in-JS solutions.",
+    "confidence": 0.46,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 7,
-      "usage_percentage": 8.0,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 3,
+      "usage_percentage": 7.7,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 3,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 1,
+        "stale_repos": 2,
+        "avg_age_months": 59.3,
+        "trend": "DECLINING",
+        "recency_score": 0.0,
+        "activity_score": 0.333,
+        "repos_list": [
+          "commando",
+          "control-tower",
+          "bazaar-shared-login"
+        ],
+        "by_domain": {
+          "frontend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.077,
+      "recency_score": 0.0,
+      "activity_score": 0.333,
+      "decision_factors": [
+        "\u2717 Low usage (7.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2717 Only 33% of repos actively maintained",
+        "\ud83d\udcc9 Trend: DECLINING"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
-    "name": "Jest",
-    "quadrant": 1,
-    "ring": 3,
-    "description": "Jest is a JavaScript testing framework designed for simplicity and ease of use. It is found in 5.7% of repositories, suggesting limited adoption, and is recommended for exploration in testing strategies.",
+    "name": "React",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "React is a widely-used JavaScript library for building user interfaces, particularly single-page applications. It is placed in the Assess ring due to its declining usage in your repositories and the emergence of alternative frameworks, despite its established presence in the industry.",
+    "confidence": 0.46,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 5,
-      "usage_percentage": 5.7,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
+      "repos_count": 3,
+      "usage_percentage": 7.7,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 3,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 1,
+        "stale_repos": 2,
+        "avg_age_months": 59.3,
+        "trend": "DECLINING",
+        "recency_score": 0.0,
+        "activity_score": 0.333,
+        "repos_list": [
+          "commando",
+          "control-tower",
+          "bazaar-shared-login"
+        ],
+        "by_domain": {
+          "frontend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.077,
+      "recency_score": 0.0,
+      "activity_score": 0.333,
+      "decision_factors": [
+        "\u2717 Low usage (7.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2717 Only 33% of repos actively maintained",
+        "\ud83d\udcc9 Trend: DECLINING"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "TypeScript",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "TypeScript is a superset of JavaScript that adds static typing, making it easier to catch errors early and improve code quality. Despite its benefits, its declining usage in your repositories suggests that it may not be the preferred choice currently, warranting further exploration rather than immediate adoption.",
+    "confidence": 0.46,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 3,
+      "usage_percentage": 7.7,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 3,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 1,
+        "stale_repos": 2,
+        "avg_age_months": 59.3,
+        "trend": "DECLINING",
+        "recency_score": 0.0,
+        "activity_score": 0.333,
+        "repos_list": [
+          "commando",
+          "control-tower",
+          "bazaar-shared-login"
+        ],
+        "by_domain": {
+          "frontend": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 0.5,
+            "trend": "STABLE"
+          },
+          "library": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.077,
+      "recency_score": 0.0,
+      "activity_score": 0.333,
+      "decision_factors": [
+        "\u2717 Low usage (7.7%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2717 Only 33% of repos actively maintained",
+        "\ud83d\udcc9 Trend: DECLINING"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   },
   {
     "name": "Docker",
     "quadrant": 2,
     "ring": 3,
-    "description": "Docker is a platform for developing, shipping, and running applications in containers, enabling consistent environments across development and production. With only 4.6% usage in repositories, it is in the Hold ring, suggesting limited adoption; it may be worth exploring for containerization needs.",
-    "metadata": {
-      "repos_count": 4,
-      "usage_percentage": 4.6,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "CMake",
-    "quadrant": 1,
-    "ring": 3,
-    "description": "CMake is an open-source build system generator that helps manage the build process of software projects across different platforms. With its presence in only 3.4% of repositories, it is suggested to hold off on widespread adoption until further evaluation of its utility in your projects.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "C++",
-    "quadrant": 3,
-    "ring": 3,
-    "description": "C++ is a general-purpose programming language known for its performance and efficiency, commonly used in system/software development and game programming. With only 3.4% presence in repositories, it is classified in the Hold ring, suggesting limited use and recommending caution in its adoption.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "high",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Go",
-    "quadrant": 3,
-    "ring": 3,
-    "description": "Go is a statically typed, compiled programming language designed for simplicity and efficiency. Its presence in only 3.4% of repositories suggests limited adoption, placing it in the Hold ring; proceed with caution and consider exploring its potential.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Smarty",
-    "quadrant": 1,
-    "ring": 3,
-    "description": "Smarty is a templating engine for PHP that simplifies the process of generating dynamic web content. With its presence in only 3.4% of repositories, it suggests limited adoption, so it is recommended to explore its capabilities before fully committing.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "ESLint",
-    "quadrant": 1,
-    "ring": 3,
-    "description": "ESLint is a static code analysis tool for identifying problematic patterns in JavaScript code. With its presence in only 3.4% of repositories, it's in the Hold ring, suggesting limited adoption; however, it is still recommended to explore for improving code quality.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Prettier",
-    "quadrant": 1,
-    "ring": 3,
-    "description": "Prettier is an opinionated code formatter that enforces consistent style across codebases. With its presence in only 3.4% of repositories, it suggests limited adoption, warranting a Hold recommendation for further exploration.",
-    "metadata": {
-      "repos_count": 3,
-      "usage_percentage": 3.4,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
-    }
-  },
-  {
-    "name": "Open Policy Agent",
-    "quadrant": 0,
-    "ring": 3,
-    "description": "Open Policy Agent (OPA) is a policy engine that enables unified policy enforcement across various systems and services. With its presence in only 2.3% of repositories, it suggests limited adoption, thus it is recommended to proceed with caution and explore its potential use cases.",
+    "description": "Docker is a platform for developing, shipping, and running applications in containers, which has been widely adopted in the industry. However, its usage in your repositories has declined significantly, indicating a trend towards abandonment, likely due to the emergence of better alternatives and evolving container orchestration technologies.",
+    "confidence": 0.82,
+    "needs_review": false,
     "metadata": {
       "repos_count": 2,
-      "usage_percentage": 2.3,
-      "total_repos": 87,
-      "confidence": "medium",
-      "ai_model": "gpt-4o-mini"
+      "usage_percentage": 5.1,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 2,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 2,
+        "active_repos": 0,
+        "stale_repos": 2,
+        "avg_age_months": 57.4,
+        "trend": "ABANDONED",
+        "recency_score": 0.0,
+        "activity_score": 0.0,
+        "repos_list": [
+          "bazaar-redash",
+          "bazaar-fluent-bit"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 2,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 0,
+            "recency_score": 0.0,
+            "activity_score": 0.0,
+            "trend": "ABANDONED"
+          }
+        }
+      },
+      "usage_score": 0.051,
+      "recency_score": 0.0,
+      "activity_score": 0.0,
+      "decision_factors": [
+        "\u2717 Low usage (5.1%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2717 Only 0% of repos actively maintained",
+        "\ud83d\udc80 Trend: ABANDONED"
+      ],
+      "review_metadata": null
     }
   }
 ]

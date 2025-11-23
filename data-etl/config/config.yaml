@@ -1,5 +1,5 @@
 github:
-  # Organizations to scan
+  # Organizations to scan (replace with your organization name)
   organizations:
     - bazaartechnologies
 

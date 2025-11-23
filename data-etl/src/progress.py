@@ -14,13 +14,14 @@ logger = logging.getLogger(__name__)
 class ProgressTracker:
     """Tracks scanning progress with checkpoint support."""
 
-    def __init__(self, checkpoint_path: Path, enabled: bool = True):
+    def __init__(self, checkpoint_path: Path, enabled: bool = True, resume: bool = False):
         """
         Initialize progress tracker.
 
         Args:
             checkpoint_path: Path to checkpoint file
             enabled: Enable checkpoint saving
+            resume: Load existing checkpoint (resume mode)
         """
         self.checkpoint_path = checkpoint_path
         self.enabled = enabled
@@ -32,7 +33,8 @@ class ProgressTracker:
             'stats': {}
         }
 
-        if enabled:
+        # Only load checkpoint if explicitly resuming
+        if enabled and resume:
             self._load()
 
     def _load(self) -> None:

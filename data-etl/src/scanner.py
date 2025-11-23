@@ -11,6 +11,7 @@ from github.GithubException import GithubException
 
 from rate_limiter import RateLimiter, CircuitBreaker
 from detector import TechnologyDetector
+from domain_detector import DomainDetector
 
 logger = logging.getLogger(__name__)
 
@@ -18,16 +19,19 @@ logger = logging.getLogger(__name__)
 class GitHubScanner:
     """Scans GitHub repositories for technology usage."""
 
-    def __init__(self, github_token: str, config: dict):
+    def __init__(self, github_token: str, config: dict, progress_tracker=None, openai_api_key: str = None):
         """
         Initialize scanner.
 
         Args:
             github_token: GitHub personal access token
             config: Configuration dictionary
+            progress_tracker: Optional ProgressTracker for resumability
+            openai_api_key: Optional OpenAI API key for domain detection
         """
         self.github = Github(github_token, per_page=100)
         self.config = config
+        self.progress_tracker = progress_tracker
         self.rate_limiter = RateLimiter(
             self.github,
             max_per_minute=config.get('rate_limit', {}).get('max_per_minute', 25),
@@ -36,9 +40,18 @@ class GitHubScanner:
         self.circuit_breaker = CircuitBreaker(failure_threshold=5, timeout=60)
         self.detector = TechnologyDetector()
 
+        # Initialize domain detector if API key provided
+        self.domain_detector = None
+        if openai_api_key:
+            self.domain_detector = DomainDetector(openai_api_key, config)
+            logger.info("Domain detection enabled")
+
         # Get repo limit from config (can be overridden externally)
         config_limit = config.get('github', {}).get('repo_limit', 0)
         self.repo_limit = config_limit if config_limit > 0 else None
+
+        # Get checkpoint save interval from config
+        self.checkpoint_save_interval = config.get('checkpoint', {}).get('save_interval', 10)
 
         # Stats
         self.stats = {
@@ -122,6 +135,12 @@ class GitHubScanner:
         repo_details = []
 
         for idx, repo in enumerate(repos):
+            # Check if already scanned (checkpoint resume)
+            if self.progress_tracker and self.progress_tracker.is_scanned(repo.full_name):
+                logger.info(f"Skipping {repo.name} (already scanned in previous run)")
+                self.stats['repos_skipped'] += 1
+                continue
+
             # Check if should skip
             if self._should_skip_repo(repo):
                 logger.debug(f"Skipping {repo.name} (filtered)")
@@ -141,15 +160,33 @@ class GitHubScanner:
 
                 if techs:
                     all_repo_techs.append(techs)
+
+                    # Detect domain if enabled
+                    domain_info = None
+                    if self.domain_detector:
+                        try:
+                            domain_info = self.domain_detector.detect_domain(repo, techs)
+                        except Exception as e:
+                            logger.warning(f"Domain detection failed for {repo.name}: {e}")
+
                     repo_details.append({
                         'name': repo.name,
                         'full_name': repo.full_name,
                         'url': repo.html_url,
                         'stars': repo.stargazers_count,
-                        'technologies': techs
+                        'technologies': techs,
+                        'temporal_metadata': self._get_temporal_metadata(repo),
+                        'domain': domain_info
                     })
 
                 self.stats['repos_scanned'] += 1
+
+                # Mark as scanned (checkpoint)
+                if self.progress_tracker:
+                    self.progress_tracker.mark_scanned(
+                        repo.full_name,
+                        save_interval=self.checkpoint_save_interval
+                    )
 
             except Exception as e:
                 logger.error(f"Error scanning {repo.name}: {e}")
@@ -219,6 +256,51 @@ class GitHubScanner:
                 return True
 
         return False
+
+    def _get_temporal_metadata(self, repo: Repository) -> dict:
+        """
+        Extract temporal metadata from repository.
+
+        Args:
+            repo: Repository object
+
+        Returns:
+            Dict with temporal information
+        """
+        from datetime import datetime, timezone
+
+        now = datetime.now(timezone.utc)
+
+        # Get dates
+        created_at = repo.created_at
+        pushed_at = repo.pushed_at if repo.pushed_at else created_at
+
+        # Calculate age
+        age_days = (now - created_at).days
+        age_months = age_days / 30.0
+
+        # Calculate days since last push
+        days_since_push = (now - pushed_at).days
+
+        # Determine if active (commits in last 90 days)
+        # 90 days is more realistic for production systems and stable libraries
+        is_active = days_since_push < 90
+
+        # Categorize by age
+        is_recent = age_months <= 6
+        is_new = age_months <= 12
+        is_legacy = age_months > 24
+
+        return {
+            'created_at': created_at.isoformat(),
+            'pushed_at': pushed_at.isoformat(),
+            'age_months': round(age_months, 1),
+            'days_since_push': days_since_push,
+            'is_active': is_active,
+            'is_recent': is_recent,       # < 6 months
+            'is_new': is_new,              # < 12 months
+            'is_legacy': is_legacy         # > 24 months
+        }
 
     def get_stats(self) -> dict:
         """Get scanning statistics."""

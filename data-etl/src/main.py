@@ -14,7 +14,8 @@ from datetime import datetime
 
 from config import Config, setup_logging
 from scanner import GitHubScanner
-from classifier import TechnologyClassifier
+from classifier_enhanced import EnhancedTechnologyClassifier
+from output_generator import UnifiedOutputGenerator
 from progress import ProgressTracker, ProgressDisplay
 
 logger = logging.getLogger(__name__)
@@ -105,108 +106,6 @@ Examples:
     return parser.parse_args()
 
 
-def write_output(data: list, output_path: Path, config: Config) -> None:
-    """
-    Write data to output file.
-
-    Args:
-        data: List of technology entries
-        output_path: Output file path
-        config: Configuration
-    """
-    try:
-        # Sort data
-        sort_by = config['output'].get('sort_by', 'usage')
-        if sort_by == 'usage':
-            data.sort(key=lambda x: x['metadata']['usage_percentage'], reverse=True)
-        elif sort_by == 'name':
-            data.sort(key=lambda x: x['name'])
-        elif sort_by == 'ring':
-            data.sort(key=lambda x: (x['ring'], x['name']))
-
-        # Remove metadata if not wanted
-        if not config['output'].get('include_metadata', True):
-            for entry in data:
-                entry.pop('metadata', None)
-
-        # Write file
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        indent = 2 if config['output'].get('format') == 'pretty' else None
-
-        with open(output_path, 'w') as f:
-            json.dump(data, f, indent=indent)
-
-        logger.info(f"✓ Written {len(data)} technologies to {output_path}")
-
-    except Exception as e:
-        logger.error(f"Error writing output file: {e}")
-        raise
-
-
-def print_summary(data: list, stats: dict, config: Config) -> None:
-    """
-    Print summary statistics.
-
-    Args:
-        data: List of technology entries
-        stats: Scanning statistics
-        config: Configuration
-    """
-    print("\n" + "=" * 70)
-    print("SCAN SUMMARY")
-    print("=" * 70)
-
-    # Repositories
-    print(f"\n📦 Repositories:")
-    print(f"  Scanned:  {stats['repos_scanned']}")
-    print(f"  Skipped:  {stats['repos_skipped']}")
-    print(f"  Errors:   {stats['errors']}")
-
-    # Technologies by ring
-    print(f"\n🎯 Technologies by Ring:")
-    by_ring = {}
-    for entry in data:
-        ring = entry['ring']
-        by_ring[ring] = by_ring.get(ring, 0) + 1
-
-    ring_names = {0: 'Adopt', 1: 'Trial', 2: 'Assess', 3: 'Hold'}
-    for ring in sorted(by_ring.keys()):
-        print(f"  {ring_names[ring]:<8} {by_ring[ring]:>3} technologies")
-
-    # Technologies by quadrant
-    print(f"\n📊 Technologies by Quadrant:")
-    by_quadrant = {}
-    for entry in data:
-        quadrant = entry['quadrant']
-        by_quadrant[quadrant] = by_quadrant.get(quadrant, 0) + 1
-
-    quadrant_names = {
-        0: 'Techniques',
-        1: 'Tools',
-        2: 'Platforms',
-        3: 'Languages & Frameworks'
-    }
-    for quadrant in sorted(by_quadrant.keys()):
-        print(f"  {quadrant_names[quadrant]:<25} {by_quadrant[quadrant]:>3} technologies")
-
-    # API usage
-    print(f"\n🌐 API Usage:")
-    print(f"  API calls:     {stats['api_calls']}")
-    if 'rate_limit' in stats:
-        rl = stats['rate_limit']
-        print(f"  Rate limit:    {rl['remaining']}/{rl['limit']} remaining")
-
-    # Output
-    output_path = config.get_output_path()
-    print(f"\n💾 Output:")
-    print(f"  File: {output_path}")
-    print(f"  Next steps:")
-    print(f"    1. Review the file for accuracy")
-    print(f"    2. Adjust classifications if needed")
-    print(f"    3. Rename to 'data.json' to use in tech radar")
-
-    print("\n" + "=" * 70 + "\n")
 
 
 def main():
@@ -234,13 +133,15 @@ def main():
         output_path = Path(args.output) if args.output else config.get_output_path()
 
         # Initialize progress tracker
-        checkpoint_enabled = config['checkpoint'].get('enabled', True) and args.resume
+        # Enabled by default (from config), unless --fresh is used
+        checkpoint_enabled = config['checkpoint'].get('enabled', True)
         if args.fresh:
             checkpoint_enabled = False
 
         progress_tracker = ProgressTracker(
             config.get_checkpoint_path(),
-            enabled=checkpoint_enabled
+            enabled=checkpoint_enabled,
+            resume=args.resume  # Only load checkpoint if --resume flag is used
         )
 
         if args.fresh:
@@ -248,15 +149,21 @@ def main():
             logger.info("Starting fresh scan (checkpoint cleared)")
         elif args.resume:
             progress = progress_tracker.get_progress()
-            logger.info(f"Resuming scan ({progress['scanned_repos']} repos already scanned)")
+            scanned_count = progress['scanned_repos']
+            if scanned_count > 0:
+                logger.info(f"Resuming scan ({scanned_count} repos already scanned)")
+            else:
+                logger.info("No previous checkpoint found, starting fresh scan")
 
         progress_tracker.start_scan()
 
-        # Initialize scanner
+        # Initialize scanner with progress tracker
         logger.info("Initializing GitHub scanner...")
         scanner = GitHubScanner(
             config.get_github_token(),
-            config.to_dict()
+            config.to_dict(),
+            progress_tracker,
+            config.get_openai_key()  # Enable domain detection
         )
 
         # Set repo limit if specified
@@ -279,36 +186,45 @@ def main():
             logger.warning("No technologies found! Check your configuration and repository access.")
             return 1
 
-        # Classify technologies
-        logger.info("Classifying technologies with AI...")
-        classifier = TechnologyClassifier(
+        # Classify technologies with enhanced temporal analysis
+        logger.info("Classifying technologies with AI and temporal analysis...")
+        classifier = EnhancedTechnologyClassifier(
             config.get_openai_key(),
             config.to_dict()
         )
 
         total_repos = stats['repos_scanned']
-        classified_data = classifier.classify_technologies(
+        high_confidence, needs_review = classifier.classify_technologies(
             tech_counts,
             total_repos,
             repo_details
         )
 
-        logger.info(f"Classified {len(classified_data)} technologies")
+        logger.info(f"Classified {len(high_confidence)} high-confidence + {len(needs_review)} needs-review technologies")
 
-        # Write output
+        # Generate unified output
         if args.dry_run:
             logger.info("Dry run - skipping file write")
-            print(f"\n📋 Preview (first 5 entries):")
-            for entry in classified_data[:5]:
-                print(f"\n  {entry['name']}")
+
+            all_techs = high_confidence + needs_review
+            print(f"\n📋 Preview (first 5 technologies):")
+            for entry in all_techs[:5]:
+                review_status = "⚠️  NEEDS REVIEW" if entry.get('needs_review', False) else "✓ AUTO-APPROVED"
+                print(f"\n  {entry['name']} [{review_status}]")
                 print(f"    Ring: {entry['ring']} | Quadrant: {entry['quadrant']}")
+                print(f"    Confidence: {entry['confidence']}")
                 print(f"    Usage: {entry['metadata']['usage_percentage']:.1f}%")
                 print(f"    {entry['description'][:80]}...")
+                if entry.get('needs_review'):
+                    print(f"    Reason: {entry['review_reason']}")
         else:
-            write_output(classified_data, output_path, config)
-
-        # Print summary
-        print_summary(classified_data, stats, config)
+            output_generator = UnifiedOutputGenerator()
+            output_path = output_generator.generate_output(
+                high_confidence,
+                needs_review,
+                config['output'],
+                stats
+            )
 
         # Finalize
         progress_tracker.finalize()
@@ -318,16 +234,33 @@ def main():
 
     except KeyboardInterrupt:
         logger.warning("\nScan interrupted by user")
+        # Save checkpoint before exit
+        try:
+            if 'progress_tracker' in locals():
+                progress_tracker.finalize()
+                logger.info("Progress saved. Resume with: python main.py --resume")
+        except Exception as e:
+            logger.error(f"Error saving checkpoint: {e}")
         return 130
 
     except Exception as e:
         logger.error(f"Fatal error: {e}", exc_info=True)
+        # Save checkpoint on error
+        try:
+            if 'progress_tracker' in locals():
+                progress_tracker.finalize()
+                logger.info("Progress saved despite error. Resume with: python main.py --resume")
+        except Exception as checkpoint_error:
+            logger.error(f"Error saving checkpoint: {checkpoint_error}")
+
         print(f"\n❌ Error: {e}")
         print("\nTroubleshooting:")
         print("  1. Check your .env file has valid tokens")
         print("  2. Verify organization name is correct")
         print("  3. Check logs in logs/scan.log")
         print("  4. Run with --verbose for detailed output")
+        if 'progress_tracker' in locals() and progress_tracker.enabled:
+            print("  5. Resume scan with: python main.py --resume")
         return 1
 
 
