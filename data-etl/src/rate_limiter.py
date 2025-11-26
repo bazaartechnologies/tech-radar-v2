@@ -27,10 +27,24 @@ class RateLimiter:
         self.safety_threshold = safety_threshold
         self.request_times = []
 
+        # Cache for rate limit (avoid checking every time)
+        self.rate_limit_cache = None
+        self.rate_limit_cache_time = 0
+        self.cache_ttl = 10  # Cache for 10 seconds
+
     def check_and_wait(self) -> None:
         """Check rate limit and wait if necessary."""
-        # Check GitHub's rate limit
-        rate_limit = self.github.get_rate_limit()
+        # Check GitHub's rate limit (with caching to avoid excessive API calls)
+        now = time.time()
+
+        # Only check actual rate limit every 10 seconds
+        if self.rate_limit_cache is None or (now - self.rate_limit_cache_time) > self.cache_ttl:
+            rate_limit = self.github.get_rate_limit()
+            self.rate_limit_cache = rate_limit
+            self.rate_limit_cache_time = now
+        else:
+            rate_limit = self.rate_limit_cache
+
         core_limit = rate_limit.core
 
         remaining = core_limit.remaining
@@ -47,6 +61,8 @@ class RateLimiter:
                     f"Waiting {wait_seconds:.0f}s until reset..."
                 )
                 time.sleep(wait_seconds + 1)  # Add 1s buffer
+                # Invalidate cache after waiting
+                self.rate_limit_cache = None
 
         # Enforce per-minute limit
         self._enforce_per_minute_limit()

@@ -12,6 +12,7 @@ from github.GithubException import GithubException
 from rate_limiter import RateLimiter, CircuitBreaker
 from detector import TechnologyDetector
 from domain_detector import DomainDetector
+from deep_scanner import DeepScanner
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +46,14 @@ class GitHubScanner:
         if openai_api_key:
             self.domain_detector = DomainDetector(openai_api_key, config)
             logger.info("Domain detection enabled")
+
+        # Initialize deep scanner if API key provided
+        self.deep_scanner = None
+        if openai_api_key:
+            self.deep_scanner = DeepScanner(openai_api_key, config)
+            if config.get('deep_scan', {}).get('enabled', False):
+                deep_repos = config.get('deep_scan', {}).get('repositories', [])
+                logger.info(f"Deep scanning enabled for: {', '.join(deep_repos)}")
 
         # Get repo limit from config (can be overridden externally)
         config_limit = config.get('github', {}).get('repo_limit', 0)
@@ -210,8 +219,30 @@ class GitHubScanner:
         self.rate_limiter.check_and_wait()
         self.stats['api_calls'] += 1
 
-        # Detect technologies
+        # Detect technologies (standard detection)
         technologies = self.detector.detect_technologies(repo)
+
+        # Deep scan if enabled for this repo
+        if self.deep_scanner and self.deep_scanner.should_deep_scan(repo.name):
+            try:
+                logger.info(f"🔍 Deep scanning {repo.name}...")
+                deep_techs = self.deep_scanner.deep_scan_repository(repo)
+
+                if deep_techs:
+                    # Add deep scan discoveries to tools category
+                    if 'tools' not in technologies:
+                        technologies['tools'] = set()
+
+                    before_count = len(technologies['tools'])
+                    technologies['tools'].update(deep_techs)
+                    after_count = len(technologies['tools'])
+
+                    new_techs = after_count - before_count
+                    if new_techs > 0:
+                        logger.info(f"✅ Deep scan added {new_techs} new technologies to {repo.name}")
+
+            except Exception as e:
+                logger.error(f"Deep scan failed for {repo.name}: {e}")
 
         # Log what we found
         tech_count = sum(len(techs) for techs in technologies.values())

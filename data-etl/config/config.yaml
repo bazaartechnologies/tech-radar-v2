@@ -39,8 +39,22 @@ classification:
     assess: 0.10  # 10-40% of repos
     # Below 10% = Hold
 
-  # Minimum repos for a tech to be included
+  # Minimum repos for a tech to be included (default)
   min_repos: 2
+
+  # Domain-aware minimum repos
+  # Infrastructure technologies are centralized (1 repo = mature)
+  # Application technologies are distributed (multiple repos = mature)
+  min_repos_by_domain:
+    infrastructure: 1  # Centralized: single infra repo is source of truth
+    data: 1           # Centralized: data pipelines often in one repo
+    backend: 2        # Distributed: microservices across repos
+    frontend: 2       # Distributed: multiple apps
+    mobile: 2         # Distributed: multiple apps
+    ml: 2             # Distributed: multiple models/projects
+    library: 2        # Distributed: used across projects
+    tooling: 2        # Distributed: various tools
+    unknown: 2        # Default for unknown domains
 
   # Technology filters (exclude internal/proprietary tools)
   exclude_patterns:
@@ -73,8 +87,9 @@ logging:
 
 # Rate limiting (GitHub has strict limits)
 rate_limit:
-  # Max requests per minute (GitHub search API limit is 30/min)
-  max_per_minute: 25
+  # Max requests per minute (GitHub allows 5000/hour = ~83/min for core API)
+  # Set conservatively to avoid hitting limits
+  max_per_minute: 60  # Increased from 25 for faster scanning
 
   # Safety threshold - pause if remaining requests < this
   safety_threshold: 100
@@ -84,3 +99,28 @@ checkpoint:
   enabled: true
   file: .scan_progress.json
   save_interval: 10  # Save after every N repos
+
+# Deep scanning for infrastructure repositories
+# Uses shallow clone + tree analysis to discover hidden technologies
+deep_scan:
+  # Enable deep scanning
+  enabled: true
+
+  # Repositories to deep scan (by name)
+  # These repos will be cloned and analyzed thoroughly
+  repositories:
+    - iac
+    - bazaar-kubernetes-artifacts
+
+  # Tree generation settings
+  tree:
+    max_depth: 6  # Maximum directory depth to scan
+    ignore_patterns:  # Directories/files to ignore
+      - '.git'
+      - 'node_modules'
+      - '.terraform'
+      - '__pycache__'
+      - '*.pyc'
+      - 'vendor'
+      - 'dist'
+      - 'build'

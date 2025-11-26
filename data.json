@@ -3,7 +3,7 @@
     "name": "Makefile",
     "quadrant": 1,
     "ring": 0,
-    "description": "Makefile is a build automation tool that is widely used in software development for managing project builds and dependencies. It is considered mature and an industry standard, making it suitable for production environments, especially in projects that require consistent build processes.",
+    "description": "Makefile is a build automation tool that is widely used in software development for managing project builds and dependencies. It is considered mature and an industry standard, making it suitable for production environments, despite recent stagnation in adoption.",
     "confidence": 0.64,
     "needs_review": true,
     "metadata": {
@@ -46,12 +46,12 @@
             "trend": "STABLE"
           },
           "infrastructure": {
-            "total_repos": 7,
+            "total_repos": 5,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 2,
+            "active_repos": 1,
             "recency_score": 0.0,
-            "activity_score": 0.286,
+            "activity_score": 0.2,
             "trend": "ABANDONED"
           },
           "tooling": {
@@ -82,22 +82,13 @@
             "trend": "ABANDONED"
           },
           "backend": {
-            "total_repos": 11,
+            "total_repos": 14,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 10,
+            "active_repos": 11,
             "recency_score": 0.0,
-            "activity_score": 0.909,
+            "activity_score": 0.786,
             "trend": "STABLE"
-          },
-          "ml": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 0,
-            "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
           }
         }
       },
@@ -125,7 +116,7 @@
     "name": "Java",
     "quadrant": 3,
     "ring": 0,
-    "description": "Java is a mature, widely-used programming language known for its portability, performance, and extensive ecosystem. It remains an industry standard for enterprise applications, making it suitable for production environments despite recent stagnation in adoption within your repositories.",
+    "description": "Java is a mature, widely-used programming language known for its portability, scalability, and robust ecosystem. It remains an industry standard for enterprise applications, making it suitable for adoption in production environments despite recent stagnation in new repository activity.",
     "confidence": 0.64,
     "needs_review": true,
     "metadata": {
@@ -141,7 +132,7 @@
         "legacy_repos": 24,
         "active_repos": 17,
         "stale_repos": 7,
-        "avg_age_months": 58.2,
+        "avg_age_months": 58.3,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.708,
@@ -177,31 +168,13 @@
             "trend": "ABANDONED"
           },
           "backend": {
-            "total_repos": 11,
+            "total_repos": 13,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 10,
+            "active_repos": 11,
             "recency_score": 0.0,
-            "activity_score": 0.909,
+            "activity_score": 0.846,
             "trend": "STABLE"
-          },
-          "infrastructure": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 1,
-            "recency_score": 0.0,
-            "activity_score": 1.0,
-            "trend": "STABLE"
-          },
-          "ml": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 0,
-            "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
           }
         }
       },
@@ -229,7 +202,7 @@
     "name": "Shell",
     "quadrant": 1,
     "ring": 0,
-    "description": "Shell is a command-line interface and scripting language that is widely used for automating tasks and managing system operations. It is classified as Adopt due to its maturity, proven reliability, and extensive use in the industry, making it an essential tool for developers and system administrators.",
+    "description": "Shell is a command-line interface and scripting language that is widely used for automating tasks and managing system operations. It is classified in the Adopt ring due to its maturity, proven track record, and essential role in development and operations workflows across various platforms.",
     "confidence": 0.74,
     "needs_review": true,
     "metadata": {
@@ -281,13 +254,13 @@
             "trend": "STABLE"
           },
           "infrastructure": {
-            "total_repos": 5,
+            "total_repos": 4,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 2,
+            "active_repos": 1,
             "recency_score": 0.0,
-            "activity_score": 0.4,
-            "trend": "DECLINING"
+            "activity_score": 0.25,
+            "trend": "ABANDONED"
           },
           "data": {
             "total_repos": 1,
@@ -299,10 +272,10 @@
             "trend": "ABANDONED"
           },
           "backend": {
-            "total_repos": 8,
+            "total_repos": 9,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 8,
+            "active_repos": 9,
             "recency_score": 0.0,
             "activity_score": 1.0,
             "trend": "STABLE"
@@ -342,7 +315,7 @@
     "name": "Kotlin",
     "quadrant": 3,
     "ring": 0,
-    "description": "Kotlin is a modern programming language that is fully interoperable with Java and has gained significant traction in the Android development community. Its mature ecosystem, strong community support, and proven performance make it a reliable choice for production environments, justifying its classification in the Adopt ring.",
+    "description": "Kotlin is a modern programming language that runs on the Java Virtual Machine (JVM) and is fully interoperable with Java. It is widely adopted in the industry, particularly for Android development, and is recognized for its concise syntax and safety features, making it a mature and proven choice for production use.",
     "confidence": 0.64,
     "needs_review": true,
     "metadata": {
@@ -358,7 +331,7 @@
         "legacy_repos": 19,
         "active_repos": 14,
         "stale_repos": 5,
-        "avg_age_months": 58.7,
+        "avg_age_months": 58.8,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.737,
@@ -394,31 +367,13 @@
             "trend": "STABLE"
           },
           "backend": {
-            "total_repos": 8,
+            "total_repos": 10,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 7,
+            "active_repos": 8,
             "recency_score": 0.0,
-            "activity_score": 0.875,
+            "activity_score": 0.8,
             "trend": "STABLE"
-          },
-          "infrastructure": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 1,
-            "recency_score": 0.0,
-            "activity_score": 1.0,
-            "trend": "STABLE"
-          },
-          "ml": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 0,
-            "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
           }
         }
       },
@@ -446,7 +401,7 @@
     "name": "GitHub Actions",
     "quadrant": 1,
     "ring": 0,
-    "description": "GitHub Actions is a powerful CI/CD tool that enables automation of workflows directly within GitHub repositories. It is classified as 'Adopt' due to its maturity, widespread industry adoption, and integration with the GitHub ecosystem, making it a standard choice for automating software development processes.",
+    "description": "GitHub Actions is a CI/CD tool that allows developers to automate workflows directly within their GitHub repositories. It is classified as Adopt due to its maturity, widespread industry use, and integration with the GitHub ecosystem, making it a standard choice for continuous integration and deployment.",
     "confidence": 0.74,
     "needs_review": true,
     "metadata": {
@@ -462,7 +417,7 @@
         "legacy_repos": 17,
         "active_repos": 17,
         "stale_repos": 0,
-        "avg_age_months": 58.7,
+        "avg_age_months": 58.8,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 1.0,
@@ -498,19 +453,19 @@
             "trend": "STABLE"
           },
           "infrastructure": {
-            "total_repos": 2,
+            "total_repos": 1,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 2,
+            "active_repos": 1,
             "recency_score": 0.0,
             "activity_score": 1.0,
             "trend": "STABLE"
           },
           "backend": {
-            "total_repos": 10,
+            "total_repos": 11,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 10,
+            "active_repos": 11,
             "recency_score": 0.0,
             "activity_score": 1.0,
             "trend": "STABLE"
@@ -550,7 +505,7 @@
     "name": "Dockerfile",
     "quadrant": 1,
     "ring": 0,
-    "description": "A Dockerfile is a text document that contains all the commands to assemble an image for Docker containers. It is in the Adopt ring due to its maturity, widespread industry usage, and its status as a standard practice for containerization in modern software development.",
+    "description": "A Dockerfile is a text document that contains all the commands to assemble an image for Docker containers. It is in the Adopt ring due to its maturity, widespread industry adoption, and essential role in modern DevOps practices for containerization and microservices architecture.",
     "confidence": 0.64,
     "needs_review": true,
     "metadata": {
@@ -584,31 +539,22 @@
         ],
         "by_domain": {
           "infrastructure": {
-            "total_repos": 5,
+            "total_repos": 3,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 2,
+            "active_repos": 1,
             "recency_score": 0.0,
-            "activity_score": 0.4,
+            "activity_score": 0.333,
             "trend": "DECLINING"
           },
           "backend": {
-            "total_repos": 11,
+            "total_repos": 14,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 10,
+            "active_repos": 11,
             "recency_score": 0.0,
-            "activity_score": 0.909,
+            "activity_score": 0.786,
             "trend": "STABLE"
-          },
-          "ml": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 0,
-            "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
           }
         }
       },
@@ -636,7 +582,7 @@
     "name": "Maven",
     "quadrant": 1,
     "ring": 0,
-    "description": "Maven is a widely-used build automation tool primarily for Java projects, known for its dependency management and project management capabilities. It is classified as Adopt due to its maturity, proven track record in the industry, and strong community support, making it a reliable choice for production environments.",
+    "description": "Maven is a widely-used build automation tool primarily for Java projects, known for its dependency management and project management capabilities. It is classified as 'Adopt' due to its maturity, proven track record in the industry, and status as an industry standard for Java development.",
     "confidence": 0.64,
     "needs_review": true,
     "metadata": {
@@ -652,7 +598,7 @@
         "legacy_repos": 16,
         "active_repos": 11,
         "stale_repos": 5,
-        "avg_age_months": 57.6,
+        "avg_age_months": 57.7,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.688,
@@ -679,31 +625,13 @@
             "trend": "ABANDONED"
           },
           "backend": {
-            "total_repos": 11,
+            "total_repos": 13,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 10,
+            "active_repos": 11,
             "recency_score": 0.0,
-            "activity_score": 0.909,
+            "activity_score": 0.846,
             "trend": "STABLE"
-          },
-          "infrastructure": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 1,
-            "recency_score": 0.0,
-            "activity_score": 1.0,
-            "trend": "STABLE"
-          },
-          "ml": {
-            "total_repos": 1,
-            "recent_repos": 0,
-            "new_repos": 0,
-            "active_repos": 0,
-            "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
           }
         }
       },
@@ -729,9 +657,9 @@
   },
   {
     "name": "HCL",
-    "quadrant": 2,
+    "quadrant": 3,
     "ring": 2,
-    "description": "HCL (HashiCorp Configuration Language) is a domain-specific language used for defining infrastructure as code, primarily in HashiCorp's tools like Terraform. It is currently in the Assess ring due to its stable usage in existing repositories but lacks recent adoption, indicating it may not be widely embraced yet despite its potential.",
+    "description": "HCL (HashiCorp Configuration Language) is a domain-specific language used for defining infrastructure as code, primarily within HashiCorp's tools like Terraform. It is in the Assess ring due to its growing adoption but still lacks the maturity and widespread industry standardization seen in other configuration languages, making it suitable for exploration but not yet recommended for production use.",
     "confidence": 0.46,
     "needs_review": true,
     "metadata": {
@@ -747,7 +675,7 @@
         "legacy_repos": 8,
         "active_repos": 4,
         "stale_repos": 4,
-        "avg_age_months": 59.2,
+        "avg_age_months": 59.3,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.5,
@@ -763,12 +691,12 @@
         ],
         "by_domain": {
           "infrastructure": {
-            "total_repos": 2,
+            "total_repos": 1,
             "recent_repos": 0,
             "new_repos": 0,
             "active_repos": 1,
             "recency_score": 0.0,
-            "activity_score": 0.5,
+            "activity_score": 1.0,
             "trend": "STABLE"
           },
           "mobile": {
@@ -789,8 +717,8 @@
             "activity_score": 0.0,
             "trend": "ABANDONED"
           },
-          "ml": {
-            "total_repos": 1,
+          "backend": {
+            "total_repos": 2,
             "recent_repos": 0,
             "new_repos": 0,
             "active_repos": 0,
@@ -833,7 +761,7 @@
     "name": "Ruby",
     "quadrant": 3,
     "ring": 2,
-    "description": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity, often used in web development, particularly with the Ruby on Rails framework. It is classified in the 'Assess' ring due to its stable usage in existing repositories but lack of recent adoption, indicating a potential stagnation in its ecosystem compared to newer languages and frameworks.",
+    "description": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity, often used in web development through the Ruby on Rails framework. It is placed in the Assess ring due to its stable usage in existing repositories but lack of recent adoption, indicating a potential stagnation in its popularity compared to newer alternatives.",
     "confidence": 0.56,
     "needs_review": true,
     "metadata": {
@@ -849,7 +777,7 @@
         "legacy_repos": 7,
         "active_repos": 7,
         "stale_repos": 0,
-        "avg_age_months": 60.5,
+        "avg_age_months": 60.6,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 1.0,
@@ -916,7 +844,7 @@
     "name": "Gradle",
     "quadrant": 1,
     "ring": 2,
-    "description": "Gradle is a powerful build automation tool that is widely used in the software development industry, particularly for Java projects. It is placed in the Assess ring due to its stable usage in some repositories, but lack of recent adoption suggests that teams may be exploring other tools or alternatives, warranting further evaluation.",
+    "description": "Gradle is a powerful build automation tool that is widely used in the Java ecosystem and supports multiple languages. It is in the Assess ring due to its stable usage in existing repositories, but the lack of recent adoption suggests that teams may be exploring alternatives or newer tools, warranting further evaluation.",
     "confidence": 0.46,
     "needs_review": true,
     "metadata": {
@@ -932,7 +860,7 @@
         "legacy_repos": 7,
         "active_repos": 5,
         "stale_repos": 2,
-        "avg_age_months": 58.4,
+        "avg_age_months": 58.5,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.714,
@@ -990,7 +918,7 @@
     "name": "JavaScript",
     "quadrant": 3,
     "ring": 2,
-    "description": "JavaScript is a widely-used programming language primarily for web development, enabling interactive web pages and serving as a foundation for numerous frameworks and libraries. It is classified in the Assess ring due to its established presence in the industry, but the lack of recent adoption in your repositories suggests a need to evaluate its continued relevance against emerging alternatives.",
+    "description": "JavaScript is a widely-used programming language essential for web development, enabling interactive and dynamic content on websites. It is classified in the Assess ring due to its stable presence in the industry, but recent adoption trends suggest a need for evaluation of its usage against emerging alternatives and frameworks.",
     "confidence": 0.52,
     "needs_review": true,
     "metadata": {
@@ -1006,7 +934,7 @@
         "legacy_repos": 6,
         "active_repos": 3,
         "stale_repos": 3,
-        "avg_age_months": 59.3,
+        "avg_age_months": 59.4,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.5,
@@ -1090,7 +1018,7 @@
     "name": "HTML",
     "quadrant": 3,
     "ring": 2,
-    "description": "HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. While it remains foundational for web development, its classification in the Assess ring reflects the emergence of newer technologies and frameworks that enhance or extend its capabilities, leading to a stable but less innovative status in the current landscape.",
+    "description": "HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. While it remains foundational for web development, its inclusion in the 'Assess' ring reflects the need to explore modern alternatives and frameworks that enhance interactivity and user experience, as well as the stagnation in recent adoption within your repositories.",
     "confidence": 0.52,
     "needs_review": true,
     "metadata": {
@@ -1106,7 +1034,7 @@
         "legacy_repos": 5,
         "active_repos": 4,
         "stale_repos": 1,
-        "avg_age_months": 59.5,
+        "avg_age_months": 59.6,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 0.8,
@@ -1171,7 +1099,7 @@
     "name": "Python",
     "quadrant": 3,
     "ring": 3,
-    "description": "Python is a high-level programming language known for its readability and versatility. Despite its historical significance and widespread use, the current trend indicates abandonment in your repositories, suggesting that better alternatives or newer technologies may be preferred for current projects.",
+    "description": "Python is a widely-used programming language known for its simplicity and versatility. However, its current trend indicates abandonment in your repositories, suggesting that better alternatives or technologies may have emerged, warranting a 'Hold' classification.",
     "confidence": 0.62,
     "needs_review": true,
     "metadata": {
@@ -1187,7 +1115,7 @@
         "legacy_repos": 4,
         "active_repos": 1,
         "stale_repos": 3,
-        "avg_age_months": 61.8,
+        "avg_age_months": 61.9,
         "trend": "ABANDONED",
         "recency_score": 0.0,
         "activity_score": 0.25,
@@ -1251,7 +1179,7 @@
     "name": "C++",
     "quadrant": 3,
     "ring": 2,
-    "description": "C++ is a widely-used programming language known for its performance and efficiency, particularly in systems programming and applications requiring high-performance computing. It is placed in the Assess ring due to its stable usage in existing repositories, but the lack of recent adoption suggests that teams may be exploring more modern alternatives or languages better suited for contemporary development practices.",
+    "description": "C++ is a powerful, high-performance programming language widely used for system/software development, game development, and applications requiring real-time processing. It is placed in the Assess ring due to its stable usage in a limited number of repositories, indicating that while it remains relevant, there may be better alternatives emerging in certain application domains.",
     "confidence": 0.56,
     "needs_review": true,
     "metadata": {
@@ -1267,7 +1195,7 @@
         "legacy_repos": 3,
         "active_repos": 3,
         "stale_repos": 0,
-        "avg_age_months": 63.3,
+        "avg_age_months": 63.4,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 1.0,
@@ -1312,7 +1240,7 @@
     "name": "CMake",
     "quadrant": 1,
     "ring": 2,
-    "description": "CMake is a widely-used build system generator that facilitates the management of complex build processes across multiple platforms. While it is stable and has a solid presence in the industry, its recent lack of adoption in your repositories suggests it may be worth exploring further before fully integrating it into new projects.",
+    "description": "CMake is a widely-used open-source build system generator that facilitates the management of complex build processes across different platforms. It is placed in the Assess ring due to its stable usage in existing repositories but lack of recent adoption, indicating potential stagnation or the emergence of better alternatives.",
     "confidence": 0.56,
     "needs_review": true,
     "metadata": {
@@ -1328,7 +1256,7 @@
         "legacy_repos": 3,
         "active_repos": 3,
         "stale_repos": 0,
-        "avg_age_months": 63.3,
+        "avg_age_months": 63.4,
         "trend": "STABLE",
         "recency_score": 0.0,
         "activity_score": 1.0,
@@ -1370,10 +1298,10 @@
     }
   },
   {
-    "name": "SCSS",
+    "name": "TypeScript",
     "quadrant": 3,
     "ring": 2,
-    "description": "SCSS (Sassy CSS) is a CSS preprocessor that extends CSS with features like variables, nested rules, and mixins, enhancing the styling capabilities of web applications. It is currently in the Assess ring due to declining usage trends, limited recent adoption, and the availability of more modern alternatives like CSS-in-JS solutions.",
+    "description": "TypeScript is a superset of JavaScript that adds static typing, enhancing code quality and maintainability. Its current classification in the Assess ring reflects a decline in usage within your organization, suggesting a need to evaluate its relevance against emerging alternatives or evolving project requirements.",
     "confidence": 0.46,
     "needs_review": true,
     "metadata": {
@@ -1389,7 +1317,7 @@
         "legacy_repos": 3,
         "active_repos": 1,
         "stale_repos": 2,
-        "avg_age_months": 59.3,
+        "avg_age_months": 59.4,
         "trend": "DECLINING",
         "recency_score": 0.0,
         "activity_score": 0.333,
@@ -1443,7 +1371,7 @@
     "name": "React",
     "quadrant": 3,
     "ring": 2,
-    "description": "React is a widely-used JavaScript library for building user interfaces, particularly single-page applications. It is placed in the Assess ring due to its declining usage in your repositories and the emergence of alternative frameworks, despite its established presence in the industry.",
+    "description": "React is a widely-used JavaScript library for building user interfaces, particularly for single-page applications. It is currently in the Assess ring due to a declining trend in usage within your repositories, suggesting that while it remains a strong choice in the industry, it may be facing competition from newer frameworks or libraries.",
     "confidence": 0.46,
     "needs_review": true,
     "metadata": {
@@ -1459,7 +1387,7 @@
         "legacy_repos": 3,
         "active_repos": 1,
         "stale_repos": 2,
-        "avg_age_months": 59.3,
+        "avg_age_months": 59.4,
         "trend": "DECLINING",
         "recency_score": 0.0,
         "activity_score": 0.333,
@@ -1510,10 +1438,10 @@
     }
   },
   {
-    "name": "TypeScript",
+    "name": "SCSS",
     "quadrant": 3,
     "ring": 2,
-    "description": "TypeScript is a superset of JavaScript that adds static typing, making it easier to catch errors early and improve code quality. Despite its benefits, its declining usage in your repositories suggests that it may not be the preferred choice currently, warranting further exploration rather than immediate adoption.",
+    "description": "SCSS (Sassy CSS) is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS). Its declining trend and lack of recent adoption suggest that while it was once popular for enhancing CSS capabilities, it may be overshadowed by more modern alternatives like CSS-in-JS solutions and utility-first frameworks, warranting its classification in the Assess ring.",
     "confidence": 0.46,
     "needs_review": true,
     "metadata": {
@@ -1529,7 +1457,7 @@
         "legacy_repos": 3,
         "active_repos": 1,
         "stale_repos": 2,
-        "avg_age_months": 59.3,
+        "avg_age_months": 59.4,
         "trend": "DECLINING",
         "recency_score": 0.0,
         "activity_score": 0.333,
@@ -1582,53 +1510,1301 @@
   {
     "name": "Docker",
     "quadrant": 2,
-    "ring": 3,
-    "description": "Docker is a platform for developing, shipping, and running applications in containers, which has been widely adopted in the industry. However, its usage in your repositories has declined significantly, indicating a trend towards abandonment, likely due to the emergence of better alternatives and evolving container orchestration technologies.",
-    "confidence": 0.82,
-    "needs_review": false,
+    "ring": 2,
+    "description": "Docker is a platform for developing, shipping, and running applications in containers, which provide a lightweight and portable environment. It is currently in the Assess ring due to declining usage in your repositories and the emergence of alternative container orchestration solutions that may be overshadowing its relevance.",
+    "confidence": 0.46,
+    "needs_review": true,
     "metadata": {
-      "repos_count": 2,
-      "usage_percentage": 5.1,
+      "repos_count": 3,
+      "usage_percentage": 7.7,
       "total_repos": 39,
-      "ai_confidence": "high",
+      "ai_confidence": "medium",
       "ai_model": "gpt-4o-mini",
       "temporal_data": {
-        "total_repos": 2,
+        "total_repos": 3,
         "recent_repos": 0,
         "new_repos": 0,
-        "legacy_repos": 2,
-        "active_repos": 0,
+        "legacy_repos": 3,
+        "active_repos": 1,
         "stale_repos": 2,
-        "avg_age_months": 57.4,
-        "trend": "ABANDONED",
+        "avg_age_months": 60.0,
+        "trend": "DECLINING",
         "recency_score": 0.0,
-        "activity_score": 0.0,
+        "activity_score": 0.333,
         "repos_list": [
+          "iac",
           "bazaar-redash",
           "bazaar-fluent-bit"
         ],
         "by_domain": {
           "infrastructure": {
-            "total_repos": 2,
+            "total_repos": 3,
             "recent_repos": 0,
             "new_repos": 0,
-            "active_repos": 0,
+            "active_repos": 1,
             "recency_score": 0.0,
-            "activity_score": 0.0,
-            "trend": "ABANDONED"
+            "activity_score": 0.333,
+            "trend": "DECLINING"
           }
         }
       },
-      "usage_score": 0.051,
+      "usage_score": 0.077,
       "recency_score": 0.0,
-      "activity_score": 0.0,
+      "activity_score": 0.333,
       "decision_factors": [
-        "\u2717 Low usage (5.1%)",
+        "\u2717 Low usage (7.7%)",
         "\u2717 No new adoption in last 6 months",
-        "\u2717 Only 0% of repos actively maintained",
-        "\ud83d\udc80 Trend: ABANDONED"
+        "\u2717 Only 33% of repos actively maintained",
+        "\ud83d\udcc9 Trend: DECLINING"
       ],
-      "review_metadata": null
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Jinja",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "Jinja is a modern and designer-friendly templating engine for Python, widely used in web frameworks like Flask. It is placed in the Assess ring due to its stable presence in the ecosystem but limited recent adoption, indicating it may not be a priority for new projects despite its utility.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "PostgreSQL",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "PostgreSQL is an advanced open-source relational database management system known for its robustness, extensibility, and compliance with SQL standards. It is placed in the Assess ring due to its stable presence in the industry, but limited recent adoption in your context suggests exploring its capabilities further before widespread implementation.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "S3",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "S3 (Simple Storage Service) is a scalable object storage service provided by AWS, widely used for data storage and retrieval. It is placed in the Assess ring due to its stable usage in your organization but limited recent adoption, indicating it may be worth exploring further for potential benefits or integration in new projects.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Prometheus",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability, widely used in cloud-native environments. It is placed in the Assess ring due to its stable usage in a limited context, suggesting potential but not yet widespread adoption across the industry.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "ArgoCD",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes, enabling automated deployment and management of applications. It is placed in the Assess ring due to its stable usage in the industry but limited adoption in your organization, indicating potential for exploration but not yet widespread implementation.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Go",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "Go is a statically typed, compiled programming language designed for simplicity and efficiency, widely used for cloud services and microservices. It is placed in the Assess ring due to its stable usage in your organization but limited recent adoption, indicating it may be worth exploring further for new projects while considering its maturity and the presence of alternatives.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "PLSQL",
+    "quadrant": 3,
+    "ring": 2,
+    "description": "PL/SQL is a procedural language extension for SQL, primarily used in Oracle databases for managing and manipulating data. It is placed in the Assess ring due to its stable usage in a niche area, but with limited recent adoption and the presence of more modern alternatives for database programming.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Trivy",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "Trivy is a comprehensive open-source vulnerability scanner for containers and other artifacts, designed to help developers identify security issues in their applications. It is placed in the Assess ring due to its emerging status and potential for adoption, although it currently has limited usage in production environments.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Kubernetes",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It is placed in the Assess ring due to its established presence in the industry, but recent low adoption in your repositories suggests it may not yet be fully integrated into your current workflows or projects.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "External Secrets",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "External Secrets is a tool that facilitates the management of secrets in a secure manner by integrating external secret management systems with Kubernetes. It is classified in the Assess ring due to its emerging nature and limited adoption, indicating that while it shows promise, it may not yet be widely proven in the industry.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Terraform",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "Terraform is an infrastructure as code tool that allows users to define and provision data center infrastructure using a declarative configuration language. It is placed in the Assess ring due to its stable usage in a limited number of repositories and the lack of recent adoption, indicating it may be suitable for exploration but not yet widely embraced in the industry.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "OpenTelemetry",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "OpenTelemetry is an open-source observability framework for cloud-native software, providing a set of APIs, libraries, agents, and instrumentation to enable the collection of telemetry data. It is in the Assess ring due to its emerging status and potential, but limited adoption and active usage in the industry suggest that further exploration is warranted before widespread implementation.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "DynamoDB",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "DynamoDB is a fully managed NoSQL database service provided by AWS, known for its scalability and performance. It is placed in the Assess ring due to its stable usage in your organization, but the lack of recent adoption suggests it may not yet be fully integrated into your workflows or that alternative solutions are being considered.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Grafana",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "Grafana is an open-source analytics and monitoring platform that allows users to visualize and analyze metrics from various data sources. It is placed in the Assess ring due to its stable usage in your organization, but with no recent adoption, indicating it may not be a priority compared to other tools, despite its maturity and industry recognition.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "SonarQube",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "SonarQube is a widely used tool for continuous inspection of code quality, providing static code analysis to detect bugs, vulnerabilities, and code smells. It is placed in the Assess ring due to its stable usage in the industry, but limited recent adoption in your organization suggests it may be worth exploring further for potential integration into new projects.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "AWS Lambda",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "AWS Lambda is a serverless compute service that allows users to run code in response to events without provisioning or managing servers. It is placed in the Assess ring due to its stable usage in your organization, but with no recent adoption, indicating that while it is a mature technology, it may not yet be fully embraced or explored in your current projects.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Open Policy Agent",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "Open Policy Agent (OPA) is a policy engine that enables unified policy enforcement across various systems and services. It is placed in the Assess ring due to its growing adoption in the industry for policy management, but it has not yet reached widespread usage or maturity compared to other established tools.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Keycloak",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "Keycloak is an open-source identity and access management solution that provides authentication and authorization services. It is classified in the Assess ring due to its stable usage in a limited number of repositories, indicating potential but not widespread adoption, and the presence of alternative solutions that may be more mature or widely supported.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "AWS",
+    "quadrant": 2,
+    "ring": 2,
+    "description": "AWS (Amazon Web Services) is a comprehensive cloud computing platform offering a wide range of services including computing power, storage options, and networking capabilities. It is placed in the Assess ring due to its stable usage in your organization, but with no recent adoption, indicating a need to evaluate its relevance against emerging alternatives and evolving business needs.",
+    "confidence": 0.62,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "high",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Falco",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "Falco is an open-source runtime security tool designed for monitoring and detecting anomalous behavior in cloud-native environments. It is in the Assess ring due to its stable usage in a limited number of repositories, indicating it is still emerging and may not yet be widely adopted or proven in production environments.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  {
+    "name": "Vector",
+    "quadrant": 1,
+    "ring": 2,
+    "description": "Vector is a tool designed for observability and data collection, particularly in the context of logging and metrics. It is placed in the Assess ring due to its stable usage in a limited number of repositories and the lack of recent adoption, indicating it may be useful for specific use cases but lacks widespread industry traction.",
+    "confidence": 0.56,
+    "needs_review": true,
+    "metadata": {
+      "repos_count": 1,
+      "usage_percentage": 2.6,
+      "total_repos": 39,
+      "ai_confidence": "medium",
+      "ai_model": "gpt-4o-mini",
+      "temporal_data": {
+        "total_repos": 1,
+        "recent_repos": 0,
+        "new_repos": 0,
+        "legacy_repos": 1,
+        "active_repos": 1,
+        "stale_repos": 0,
+        "avg_age_months": 65.0,
+        "trend": "STABLE",
+        "recency_score": 0.0,
+        "activity_score": 1.0,
+        "repos_list": [
+          "iac"
+        ],
+        "by_domain": {
+          "infrastructure": {
+            "total_repos": 1,
+            "recent_repos": 0,
+            "new_repos": 0,
+            "active_repos": 1,
+            "recency_score": 0.0,
+            "activity_score": 1.0,
+            "trend": "STABLE"
+          }
+        }
+      },
+      "usage_score": 0.026,
+      "recency_score": 0.0,
+      "activity_score": 1.0,
+      "decision_factors": [
+        "\u2717 Low usage (2.6%)",
+        "\u2717 No new adoption in last 6 months",
+        "\u2713 100% of repos actively maintained",
+        "\u27a1 Trend: STABLE"
+      ],
+      "review_metadata": {
+        "reason": "Low confidence classification",
+        "status": "pending",
+        "human_decision": {
+          "final_ring": null,
+          "final_quadrant": null,
+          "notes": null
+        }
+      }
     }
   }
 ]

@@ -67,12 +67,18 @@ class EnhancedTechnologyClassifier:
         """
         high_confidence = []
         needs_review = []
-        min_repos = self.config['classification'].get('min_repos', 2)
+        default_min_repos = self.config['classification'].get('min_repos', 2)
+        min_repos_by_domain = self.config['classification'].get('min_repos_by_domain', {})
 
         for tech_name, count in sorted(tech_counts.items(), key=lambda x: x[1], reverse=True):
-            # Skip if below minimum threshold
-            if count < min_repos:
-                logger.debug(f"Skipping {tech_name} (only {count} repos)")
+            # Domain-aware min_repos check
+            should_include = self._meets_domain_threshold(
+                tech_name, count, repo_details,
+                default_min_repos, min_repos_by_domain
+            )
+
+            if not should_include:
+                logger.debug(f"Skipping {tech_name} (doesn't meet domain thresholds)")
                 continue
 
             # Skip if matches exclude patterns
@@ -528,6 +534,73 @@ Respond with valid JSON only."""
             'low': 0.3
         }
         return mapping.get(ai_confidence.lower(), 0.5)
+
+    def _meets_domain_threshold(
+        self,
+        tech_name: str,
+        total_count: int,
+        repo_details: List[Dict],
+        default_min_repos: int,
+        min_repos_by_domain: Dict[str, int]
+    ) -> bool:
+        """
+        Check if technology meets domain-aware minimum repo threshold.
+
+        Infrastructure technologies are centralized (1 repo = mature).
+        Application technologies are distributed (multiple repos = mature).
+
+        Args:
+            tech_name: Technology name
+            total_count: Total repos using this tech
+            repo_details: List of repo detail dicts
+            default_min_repos: Default minimum repos threshold
+            min_repos_by_domain: Domain-specific thresholds
+
+        Returns:
+            True if meets threshold in any domain or globally
+        """
+        # If meets global threshold, include regardless of domain
+        if total_count >= default_min_repos:
+            return True
+
+        # Check domain-specific thresholds
+        # Count repos per domain for this technology
+        domain_counts = {}
+
+        for repo in repo_details:
+            # Check if this repo uses this technology
+            repo_techs = repo.get('technologies', {})
+            has_tech = False
+
+            for category, techs in repo_techs.items():
+                if tech_name in techs:
+                    has_tech = True
+                    break
+
+            if has_tech:
+                # Domain is a dict: {'domain': 'backend', 'confidence': 0.95, ...}
+                domain_data = repo.get('domain', {})
+                domain = domain_data.get('domain', 'unknown') if domain_data else 'unknown'
+                domain_counts[domain] = domain_counts.get(domain, 0) + 1
+
+        # Check if meets threshold in any domain
+        for domain, count in domain_counts.items():
+            threshold = min_repos_by_domain.get(domain, default_min_repos)
+
+            if count >= threshold:
+                logger.info(
+                    f"✓ {tech_name} meets {domain} domain threshold "
+                    f"({count} repos >= {threshold} required)"
+                )
+                return True
+
+        # Log why it was filtered
+        domain_info = ", ".join([f"{d}:{c}" for d, c in domain_counts.items()])
+        logger.debug(
+            f"✗ {tech_name} below thresholds (total:{total_count}, by domain: {domain_info})"
+        )
+
+        return False
 
     def _should_exclude(self, tech_name: str) -> bool:
         """Check if technology should be excluded."""

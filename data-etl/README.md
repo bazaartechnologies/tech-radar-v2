@@ -6,11 +6,14 @@ Automated technology scanning tool that analyzes GitHub repositories and generat
 
 - 🔍 Scans GitHub organizations for technology usage
 - 🤖 AI-powered classification using OpenAI GPT-4o-mini
-- 📊 Usage-based adoption level detection
+- 📊 Usage-based adoption level detection with domain-aware analysis
+- 🔬 **Deep scanning** for infrastructure repos using tree-based analysis
+- 🌐 **Domain segmentation** (infrastructure, backend, frontend, mobile)
 - 🔄 Automatic pagination and rate limiting
 - 💾 Progress checkpointing for resumability
 - 📝 Comprehensive logging and error handling
 - 🛡️ Circuit breaker pattern for API reliability
+- 🏗️ **Organization-agnostic** design - works with any GitHub org
 
 ## Quick Start
 
@@ -77,18 +80,43 @@ python src/main.py --resume
 - Handles pagination automatically
 
 ### 2. Technology Detection
-Scans for technologies in:
+
+**Standard Detection** scans for technologies in:
 - `package.json` (Node.js/JavaScript)
 - `requirements.txt`, `Pipfile`, `pyproject.toml` (Python)
 - `go.mod`, `go.sum` (Go)
 - `Cargo.toml` (Rust)
-- `pom.xml`, `build.gradle` (Java)
+- `pom.xml`, `build.gradle`, `build.gradle.kts` (Java/Kotlin)
 - `Gemfile` (Ruby)
 - `composer.json` (PHP)
 - `Dockerfile` (Docker)
 - `.github/workflows/*.yml` (CI/CD tools)
 
-### 3. AI Classification
+**Deep Scanning** (for infrastructure repos):
+- Shallow clones specified repositories
+- Generates full directory tree structure
+- AI analyzes tree to discover embedded technologies:
+  - Security tools (Trivy, Falco, etc.)
+  - Monitoring stack (Prometheus, Grafana, etc.)
+  - Kubernetes tools (ArgoCD, Helm charts, etc.)
+  - Cloud services and infrastructure patterns
+- Completely organization-agnostic - no hardcoded patterns
+
+### 3. Domain Detection
+
+AI automatically analyzes each repository to determine its domain:
+- **Infrastructure**: IaC repos, Kubernetes configs, CI/CD pipelines
+- **Backend**: APIs, services, microservices
+- **Frontend**: Web apps, mobile web, UI libraries
+- **Mobile**: iOS, Android, cross-platform mobile apps
+
+Domain detection uses:
+- Repository structure analysis
+- File pattern recognition
+- Technology stack inference
+- No hardcoded organization patterns
+
+### 4. AI Classification
 
 For each discovered technology, AI determines:
 
@@ -98,37 +126,92 @@ For each discovered technology, AI determines:
 - 2: Platforms (infrastructure, databases, cloud)
 - 3: Languages & Frameworks
 
-**Ring** (Adoption Level) - Usage-based:
-- **Adopt** (0): Found in 70%+ of repos
-- **Trial** (1): Found in 40-70% of repos
-- **Assess** (2): Found in 10-40% of repos
-- **Hold** (3): Found in <10% of repos
+**Ring** (Adoption Level) - Domain-aware classification:
+
+**Primary Logic** (checks domain dominance first):
+- 50+ repos in a domain + 50% active → **Adopt** for that domain
+- 70+ repos in a domain + 40% active → **Adopt** for that domain
+- 30+ repos in a domain + 65% active → **Trial** for that domain
+
+**Fallback Logic** (global usage):
+- 40%+ usage + 50%+ active → **Adopt**
+- 35%+ usage + 60%+ active → **Adopt**
+- 30%+ usage + 50%+ active → **Trial**
+- 15%+ usage + 40%+ active → **Assess**
+- Below thresholds → **Hold**
+
+**Activity Window**: Repos with commits in last 90 days considered active
 
 **Description**: AI-generated summary explaining:
 - What the technology is
 - Why it's in that ring
-- Recommendations for usage
+- Domain-specific recommendations
 
-### 4. Output Generation
+### 5. Output Generation
 
-Creates `data.ai.json` with format:
+Creates `data.ai.json` with comprehensive metadata:
 
 ```json
 [
   {
-    "name": "React",
+    "name": "Java",
     "quadrant": 3,
     "ring": 0,
-    "description": "JavaScript library for building user interfaces. Found in 85% of repositories. Widely adopted, mature ecosystem.",
+    "description": "Enterprise-grade language. Dominant in backend (95% of backend repos), 58% active. Strategic choice for microservices.",
     "metadata": {
-      "repos_count": 42,
-      "usage_percentage": 85.7,
-      "detected_versions": ["18.2.0", "17.0.2"],
-      "confidence": "high"
+      "repos_count": 105,
+      "usage_percentage": 48.2,
+      "total_repos_scanned": 218,
+      "recency_score": 0.42,
+      "activity_score": 0.58,
+      "trend": "stable",
+      "confidence": 0.9
+    },
+    "temporal_data": {
+      "recent_repos": 15,
+      "new_repos": 8,
+      "active_repos": 61,
+      "legacy_repos": 42,
+      "by_domain": {
+        "backend": {
+          "total_repos": 100,
+          "recent_repos": 12,
+          "active_repos": 58,
+          "usage_percentage": 95.2,
+          "activity_score": 0.58,
+          "trend": "stable"
+        },
+        "infrastructure": {
+          "total_repos": 5,
+          "recent_repos": 3,
+          "active_repos": 3,
+          "usage_percentage": 4.8,
+          "activity_score": 0.60,
+          "trend": "growing"
+        }
+      }
+    },
+    "domain_breakdown": {
+      "backend": {
+        "ring": 0,
+        "description": "Dominant backend language (95% usage). Production-ready, actively maintained.",
+        "confidence": 0.95
+      },
+      "infrastructure": {
+        "ring": 2,
+        "description": "Limited infrastructure usage (5 repos). Assess for specific use cases.",
+        "confidence": 0.70
+      }
     }
   }
 ]
 ```
+
+**Key Fields**:
+- `temporal_data.by_domain`: Domain-specific usage statistics
+- `domain_breakdown`: Different classifications per domain
+- `activity_score`: Percentage of repos active in last 90 days
+- `trend`: "growing", "stable", "declining", "new"
 
 User can review and manually rename to `data.json` when ready.
 
@@ -219,12 +302,145 @@ checkpoint:
   enabled: true
   file: .scan_progress.json
   save_interval: 10  # Save every N repos
+
+# Deep scanning for infrastructure repositories
+deep_scan:
+  # Enable deep scanning
+  enabled: true
+
+  # Repositories to deep scan (by name)
+  repositories:
+    - iac
+    - kubernetes-artifacts
+    - infrastructure
+
+  # Tree generation settings
+  tree:
+    max_depth: 6  # Maximum directory depth
+    ignore_patterns:  # Directories/files to ignore
+      - '.git'
+      - 'node_modules'
+      - '.terraform'
+      - '__pycache__'
+      - '*.pyc'
+      - 'vendor'
+      - 'dist'
+      - 'build'
 ```
+
+## Deep Scanning Feature
+
+### What is Deep Scanning?
+
+Deep scanning unlocks hidden technologies in infrastructure repositories that standard file detection misses.
+
+**Problem**: Repos like `iac` (Infrastructure as Code) or `kubernetes-artifacts` contain:
+- Security tools embedded in pre-commit hooks (Trivy, TFLint)
+- Monitoring stack in Helm charts (Prometheus, Grafana, Loki)
+- Kubernetes tools in directory structure (ArgoCD, Falco, External Secrets)
+- Cloud services in Terraform modules
+
+Standard detection only looks at dependency files and misses these embedded tools.
+
+**Solution**: Tree-based AI analysis
+1. Shallow clone the repository (fast, 1-2 seconds)
+2. Generate full directory tree structure
+3. AI analyzes tree to discover technologies from:
+   - Directory names (e.g., `prometheus/` → Prometheus)
+   - File patterns (e.g., `*.tf` → Terraform)
+   - Configuration files (e.g., `Chart.yaml` → Helm)
+   - Structural patterns
+
+**Key Benefits**:
+- ✅ **Fast**: Shallow clone + tree generation (~2-3 seconds per repo)
+- ✅ **Cheap**: Single AI call per repo (~$0.0005 per repo)
+- ✅ **Complete**: Full repository context in one analysis
+- ✅ **Agnostic**: No hardcoded patterns or cloud provider assumptions
+- ✅ **Clean**: Automatic cleanup of temp files
+
+### Configuring Deep Scan
+
+Add repositories to deep scan in `config.yaml`:
+
+```yaml
+deep_scan:
+  enabled: true
+
+  # List repos by name (not full path)
+  repositories:
+    - iac
+    - kubernetes-artifacts
+    - infrastructure
+    - platform-configs
+
+  tree:
+    max_depth: 6  # How deep to traverse
+    ignore_patterns:  # Skip these directories
+      - '.git'
+      - 'node_modules'
+      - '.terraform'
+      - '__pycache__'
+      - 'vendor'
+      - 'dist'
+      - 'build'
+```
+
+**When scanner encounters these repos**, it automatically:
+1. Performs standard detection first
+2. Then performs deep scan
+3. Merges results (deep scan discoveries added to `tools` category)
+4. Logs discoveries: "✅ Deep scan added 8 new technologies"
+
+### Example Output
+
+```
+🔍 Deep scanning iac...
+Cloning iac to /tmp/scan_iac_xyz...
+✓ Cloned iac
+Generating tree for iac...
+✓ Generated tree (12,543 chars)
+  Found: Terraform (high confidence) - *.tf files throughout
+  Found: Trivy (high confidence) - .trivyignore and pre-commit config
+  Found: AWS Secrets Manager (medium confidence) - terraform modules
+  Found: TFLint (medium confidence) - pre-commit hooks
+  Pattern: Multi-account AWS structure - accounts/ directory
+✅ Deep scan added 8 new technologies to iac
+```
+
+### Technologies Typically Discovered
+
+**Infrastructure Repos** (`iac`, `terraform`):
+- Security: Trivy, TFLint, terraform-docs, Checkov
+- Cloud Services: AWS services from module names
+- Tools: Pre-commit, Makefiles, shell scripts
+
+**Kubernetes Repos** (`kubernetes-artifacts`, `k8s-configs`):
+- Monitoring: Prometheus, Grafana, Loki, Thanos
+- Security: Falco, OPA/Gatekeeper, External Secrets
+- GitOps: ArgoCD, Flux, Helm
+- Ingress: NGINX Ingress, Traefik, Istio
+- Service Mesh: Linkerd, Consul
+
+**Platform Repos**:
+- CI/CD: GitHub Actions, GitLab CI, Jenkins
+- Databases: From chart dependencies
+- Message Queues: Kafka, RabbitMQ, Redis
+
+### Cost Analysis
+
+**Per Repository**:
+- Tree generation: Free (local command)
+- AI analysis: ~12K tokens input + 500 tokens output = ~$0.0005
+- Total: **$0.0005 per repo**
+
+**For 5 infrastructure repos**: $0.0025 (~¼ cent)
+
+**Compared to manual analysis**: Saves hours of work for minimal cost
 
 ## CLI Commands
 
 ```bash
-# Basic scan
+# Basic scan (includes deep scan if enabled)
 python src/main.py
 
 # Scan specific org
