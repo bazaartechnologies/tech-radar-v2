@@ -15,6 +15,7 @@ from datetime import datetime
 from config import Config, setup_logging
 from scanner import GitHubScanner
 from classifier_enhanced import EnhancedTechnologyClassifier
+from ai_filter import AITechnologyFilter
 from output_generator import UnifiedOutputGenerator
 from progress import ProgressTracker, ProgressDisplay
 
@@ -201,6 +202,51 @@ def main():
         )
 
         logger.info(f"Classified {len(high_confidence)} high-confidence + {len(needs_review)} needs-review technologies")
+
+        # Combine for filtering
+        all_classified = high_confidence + needs_review
+
+        # Apply AI-driven filtering
+        filtered_techs = all_classified
+        filtering_report = None
+
+        if config.get('filtering', {}).get('enabled', False):
+            logger.info("Applying AI-driven filtering...")
+            filter = AITechnologyFilter(config.get_openai_key(), config.to_dict())
+
+            # Get filter decisions
+            filter_decisions = filter.filter_technologies(all_classified)
+
+            # Apply transformations
+            filtered_techs = filter.apply_filter_decisions(all_classified, filter_decisions)
+
+            # Save filtering report
+            filtering_report = {
+                'summary': {
+                    'original_count': len(all_classified),
+                    'filtered_count': len(filtered_techs),
+                    'removed_count': len(all_classified) - len(filtered_techs),
+                    'ai_calls': filter.stats.get('ai_calls', 0)
+                },
+                'decisions': filter_decisions,
+                'stats': filter.get_stats()
+            }
+
+            logger.info(f"Filtering complete: {len(all_classified)} → {len(filtered_techs)} technologies")
+            logger.info(f"Removed {len(all_classified) - len(filtered_techs)} low-value technologies")
+
+            # Save filtering report to separate file
+            if not args.dry_run:
+                report_path = output_path.parent / 'filtering_report.json'
+                with open(report_path, 'w') as f:
+                    json.dump(filtering_report, f, indent=2, default=str)
+                logger.info(f"Filtering report saved to: {report_path}")
+        else:
+            logger.info("Filtering disabled in config")
+
+        # Separate back into high_confidence and needs_review for output
+        high_confidence = [t for t in filtered_techs if not t.get('needs_review', False)]
+        needs_review = [t for t in filtered_techs if t.get('needs_review', False)]
 
         # Generate unified output
         if args.dry_run:

@@ -11,6 +11,7 @@ from github.GithubException import GithubException
 
 from rate_limiter import RateLimiter, CircuitBreaker
 from detector import TechnologyDetector
+from ai_detector import AITechnologyDetector
 from domain_detector import DomainDetector
 from deep_scanner import DeepScanner
 
@@ -39,7 +40,22 @@ class GitHubScanner:
             safety_threshold=config.get('rate_limit', {}).get('safety_threshold', 100)
         )
         self.circuit_breaker = CircuitBreaker(failure_threshold=5, timeout=60)
-        self.detector = TechnologyDetector()
+
+        # Initialize detector based on config mode
+        detection_config = config.get('detection', {})
+        detection_mode = detection_config.get('mode', 'legacy')
+
+        if detection_mode == 'ai' and openai_api_key:
+            self.detector = AITechnologyDetector(openai_api_key, config)
+            logger.info("Using AI-driven technology detection")
+        elif detection_mode == 'hybrid' and openai_api_key:
+            # Use both detectors - AI first, fallback to legacy
+            self.detector = AITechnologyDetector(openai_api_key, config)
+            self.legacy_detector = TechnologyDetector()
+            logger.info("Using hybrid detection (AI + legacy fallback)")
+        else:
+            self.detector = TechnologyDetector()
+            logger.info("Using legacy hardcoded detection")
 
         # Initialize domain detector if API key provided
         self.domain_detector = None

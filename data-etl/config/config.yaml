@@ -31,6 +31,74 @@ openai:
   max_retries: 3
   timeout: 30
 
+# Technology Detection Configuration
+detection:
+  # Detection mode: legacy, ai, or hybrid
+  # - legacy: Uses hardcoded patterns (fast, limited)
+  # - ai: Uses AI-driven discovery (comprehensive, slower)
+  # - hybrid: AI first, fallback to legacy on error
+  mode: ai  # Change to "legacy" to use old detector
+
+  # AI Detection Settings (only used when mode = ai or hybrid)
+  ai_detection:
+    enabled: true
+    phase1_model: gpt-4o-mini  # Fast model for file triage
+    phase2_model: gpt-4o-mini  # Accurate model for analysis
+    max_files_per_repo: 6      # Max files to analyze per repo (reduced for speed)
+    max_file_size_kb: 50       # Skip files larger than this (reduced for speed)
+    file_tree_max_depth: 2     # How deep to scan directory tree (reduced for speed)
+    cache_results: true        # Cache AI results per repo
+
+# Technology Filtering Configuration
+filtering:
+  enabled: true  # Set to false to disable AI filtering
+
+  # Auto-ignore rules (no AI needed - fast filtering)
+  auto_ignore:
+    single_repo_technologies: true      # Remove technologies in only 1 repo
+    os_utilities: true                  # apt-get, brew, curl, wget
+    developer_conveniences: true        # rimraf, nodemon, npm-run-all
+
+  # AI-driven filtering
+  ai_filter:
+    enabled: true
+    model: gpt-4o-mini
+
+    # Strategic value thresholds
+    strategic_value:
+      include_if: ["high", "medium"]    # Keep technologies with these values
+      exclude_if: ["low"]                # Remove technologies with these values
+
+    # Duplicate handling
+    duplicate_detection:
+      enabled: true
+      merge_strategy: canonical_name    # Use most official/standard name
+
+    # Consolidation rules
+    consolidation:
+      enabled: true
+      merge_sub_features: true          # Firebase Crashlytics → Firebase
+      max_depth: 1                      # Only parent-child (1 level)
+
+    # Deprecation detection
+    deprecation:
+      enabled: true
+      flag_in_output: true              # Add "deprecated" field to output
+      suggest_alternatives: true        # AI suggests replacement
+
+  # Override rules (bypass auto-ignore)
+  overrides:
+    always_include_if_repos_gte: 5     # Always keep if used in 5+ repos
+    always_include_names:               # Never filter these (strategic)
+      - GraphQL
+      - gRPC
+      - Kubernetes
+      - Docker
+      - PostgreSQL
+      - MongoDB
+      - Redis
+      - Kafka
+
 classification:
   # Usage-based thresholds (percentage of repos)
   thresholds:
