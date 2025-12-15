@@ -134,6 +134,82 @@ body.light-theme .moon-icon {
     display: block;
 }
 
+/* AI Toggle Styles */
+.data-source-toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.data-source-toggle:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#ai-toggle {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#ai-toggle:checked + .toggle-slider {
+    background: var(--accent-primary);
+}
+
+#ai-toggle:checked + .toggle-slider::before {
+    transform: translateX(20px);
+    background: white;
+}
+
+#ai-toggle:checked ~ .toggle-text:last-child {
+    color: var(--accent-primary);
+}
+
+#ai-toggle:not(:checked) ~ .toggle-text:first-child {
+    color: var(--text-primary);
+}
+
 h1 {
     font-size: 3.5rem;
     font-weight: 800;

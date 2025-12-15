@@ -76,8 +76,14 @@ class TechRadar {
         this.updateTransform();
     }
 
-    loadData() {
-        fetch('data.json')
+    getDataSource() {
+        const aiToggle = document.getElementById('ai-toggle');
+        return aiToggle && aiToggle.checked ? 'data.ai.json' : 'data.json';
+    }
+
+    loadData(dataSource = null) {
+        const source = dataSource || this.getDataSource();
+        fetch(source)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -109,7 +115,7 @@ class TechRadar {
                                 <p style="color: var(--text-secondary); margin-top: 10px;">Then open: <code style="color: var(--accent-primary);">http://localhost:8000</code></p>
                             </div>
                             <p style="color: var(--text-secondary); margin-top: 20px; font-size: 0.9rem;">
-                                Error: ${error.message}
+                                Error: ${error.message} (${source})
                             </p>
                         </div>
                     `;
@@ -238,6 +244,11 @@ class TechRadar {
         // Reset zoom button
         document.getElementById('reset-zoom').addEventListener('click', () => {
             this.resetZoom();
+        });
+
+        // AI toggle
+        document.getElementById('ai-toggle').addEventListener('change', () => {
+            this.loadData();
         });
     }
 
